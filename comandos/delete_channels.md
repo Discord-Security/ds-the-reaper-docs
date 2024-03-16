@@ -8,9 +8,7 @@ Para usá-lo você deverá escrever **/delete_channels**
 
 O mesmo irá pedir 1 paramêtro:
 
-- Categoria
-
-Este pedirá apenas categorias, já filtrando as opções possíveis só para categorias.
+- `Categoria`: Este pedirá apenas categorias, já filtrando as opções possíveis só para categorias.
 
 ## Exemplo 
 
