@@ -1,11 +1,11 @@
-# Comando Desmutar
+# Comando Unmute
 
-O comando **/desmutar** tira o castigo de um usuário definindo o tempo como nulo.
+O comando **/unmute **tira o castigo de um usuário definindo o tempo como nulo.
 
-<img src="https://i.imgur.com/yohlZxw.png">
+![](https://i.imgur.com/yohlZxw.png)
 
 - `Usuário`: Este basta o mencioná-lo no servidor ou usar o ID de usuário.
 
-## Exemplo 
+## Exemplo
 
-<img src="https://i.imgur.com/wKHG3bK.png">
+![](https://i.imgur.com/wKHG3bK.png)

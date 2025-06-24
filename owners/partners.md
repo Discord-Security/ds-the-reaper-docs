@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/oSdBaYy.png" style="width: 100%">
+<img src="https://i.imgur.com/oSdBaYy.png" style="width: 100%" />
 
 # Variáveis de agradecimento de parceria
 

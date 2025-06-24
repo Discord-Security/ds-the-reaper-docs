@@ -1,43 +1,41 @@
-<img src="https://i.imgur.com/N65kARY.png">
+![](https://i.imgur.com/N65kARY.png)
 
 # Créditos para a Equipe
 
-> Desenvolvedores
-> ---
-> * Contribuíram no código do projeto.
+> ## Desenvolvedores
+>
+> - Contribuíram no código do projeto.
 
-1. Kuriel#1411
+1. kuriel.
 
-> Patrocinadores
-> ---
-> * Contribuiu com serviços pagos para o The Reaper.
+> ## Patrocinadores
+>
+> - Contribuiu com serviços pagos para o The Reaper.
 
-1. ! Lyke ᵉᵗʳ#1000 (Host)
+1. izakdvlpr
 
-> Designers
-> ---
-> * Responsáveis pela parte gráfica de vários elementos dentro do projeto.
+> ## Designers
+>
+> - Responsáveis pela parte gráfica de vários elementos dentro do projeto.
 
 1. Baby' ♡#1556
 
-> Contribuidores
-> ---
-> * Fizeram a tarefa de alertar problemas, bugs e/ou sugestões.
+> ## Contribuidores
+>
+> - Fizeram a tarefa de alertar problemas, bugs e/ou sugestões.
 
-1. Kaze#7631
-2. rasuyaawk#0113
+1. kazezinhu
+2. rasuy
 3. NightPojav#0007
 4. Luey#3602
-5. Um Guisado#0845
-6. Drock#4993
+5. Um Guisado
+6. drockpt
 7. MedI#0343
-8. JoaoNetook13#3504
+8. JoaoNetook13
 9. Yukimiya.#6863
 
-> Administração
-> ---
-> * Ajudaram a admininstrar a segurança de todo o projeto, convidar e aceitar ou negar servidores.
+> ## Administração
+>
+> - Ajudaram a admininstrar a segurança de todo o projeto, convidar e aceitar ou negar servidores.
 
-1. ! Lyke ᵉᵗʳ#1000
-2. Kaze#7631
-3. Um Guisado#0845
+1. kuriel.

@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/x0bNexm.png" style="width: 100%">
+<img src="https://i.imgur.com/x0bNexm.png" style="width: 100%" />
 
 # O que é guardado dentro do The Reaper?
 
@@ -9,7 +9,7 @@ O The Reaper armazena dados relacionados ao seu servidor, tais como:
 - **Senhas**, **websites**, **cargos** e **mensagens** necessários para algumas funcionalidades;
 - Caso o servidor permita, a mensagem de parceria também é armazenada.
 
-!> Gostaríamos de deixar claro que não armazenamos nada que possa comprometer a privacidade de usuários, mensagens ou informações.
+> Gostaríamos de deixar claro que não armazenamos nada que possa comprometer a privacidade de usuários, mensagens ou informações.
 
 Para remover esses dados completamente, eles são apagados quando você remove o nosso bot da sua comunidade após 6 horas ou ao ser executado o comando `/reset`.
 

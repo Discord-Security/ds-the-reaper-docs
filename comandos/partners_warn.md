@@ -4,9 +4,12 @@ O comando **/parcerias_aviso** é um comando de agradecimento de parcerias assim
 
 ### Mensagem
 
-Para enviar o conteúdo da sua mensagem em formato JSON, basta construir tudo da sua maneira e usar as [variáveis](https://the-reaper-docs.aventuraland.repl.co/#/owners/partners) disponíveis [neste site](https://glitchii.github.io/embedbuilder/). Isso permitirá que a mensagem seja construída de forma eficiente.
+Para enviar o conteúdo da sua mensagem em formato JSON, basta construir tudo da sua maneira e usar as [variáveis](https://the-reaper-docs.aventuraland.repl.co/#/owners/partners) disponíveis [neste site](https://message.style/app/editor). Isso permitirá que a mensagem seja construída de forma eficiente.
 
-<img src="https://i.imgur.com/9ljPqdy.png">
+<img
+  src="https://i.imgur.com/9ljPqdy.png"
+  className="mx-auto"
+/>
 
 ### Canal
 
@@ -14,28 +17,43 @@ Informe o seu canal onde você publica parcerias.
 
 - `Canal`: Mencione o canal onde deseja publicar parcerias.
 
-<img src="https://i.imgur.com/Teo0Cw7.png">
+<img
+  src="https://i.imgur.com/Teo0Cw7.png"
+  className="mx-auto"
+/>
 
 ### Ativar
 
 Ative o sistema para começar a notificar.
 
-<img src="https://i.imgur.com/v8tIe5l.png">
+<img
+  src="https://i.imgur.com/v8tIe5l.png"
+  className="mx-auto"
+/>
 
 ### Informação
 
 Eu exibo algumas informações úteis de como este sistema funciona.
 
-<img src="https://i.imgur.com/oeRaNJB.png">
+<img
+  src="https://i.imgur.com/oeRaNJB.png"
+  className="mx-auto"
+/>
 
 ### Classificação
 
 Um leaderboard de todos os seus staffs parceria a informar quantas parcerias foram feitas ao total pelo x staff.
 
-<img src="https://i.imgur.com/nEkOmjm.png">
+<img
+  src="https://i.imgur.com/nEkOmjm.png"
+  className="mx-auto"
+/>
 
 ---
 
 ### Exemplo
 
-<img src="https://i.imgur.com/JMD1XYI.png">
+<img
+  src="https://i.imgur.com/JMD1XYI.png"
+  className="mx-auto"
+/>

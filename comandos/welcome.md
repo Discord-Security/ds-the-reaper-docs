@@ -4,9 +4,9 @@ O comando **/welcome** é um comando bastante intuitivo no qual alguns usuários
 
 ### Mensagem
 
-Para enviar o conteúdo da sua mensagem em formato JSON, basta construir tudo da sua maneira e usar as [variáveis](https://the-reaper-docs.aventuraland.repl.co/#/owners/welcome) disponíveis [neste site](https://glitchii.github.io/embedbuilder/). Isso permitirá que a mensagem seja construída de forma eficiente.
+Para enviar o conteúdo da sua mensagem em formato JSON, basta construir tudo da sua maneira e usar as [variáveis](https://the-reaper-docs.aventuraland.repl.co/#/owners/welcome) disponíveis [neste site](https://message.style/app/editor). Isso permitirá que a mensagem seja construída de forma eficiente.
 
-<img src="https://i.imgur.com/G2vxAGd.png" />
+![](https://i.imgur.com/G2vxAGd.png)
 
 ### Apagar a mensagem após X tempo
 
@@ -14,33 +14,33 @@ Defina um limite de tempo (por exemplo, 1d, 1h) após a criação da mensagem pa
 
 - `Tempo`: Identifique o intervalo de tempo após a criação da mensagem.
 
-<img src="https://i.imgur.com/gE3lyUH.png" />
+![](https://i.imgur.com/gE3lyUH.png)
 
 ### Definir canal de Welcome
 
-Mencione um canal para o The Reaper enviar os seus bem-vindos!
+Mencione um canal para o The Reaper enviar os seus bem-vindos\!
 
 - `Canal`: Identifique o canal onde será enviada as entradas.
 
-<img src="https://i.imgur.com/jwLCQPc.png" />
+![](https://i.imgur.com/jwLCQPc.png)
 
 ### Ativar
 
 Use essa opção para alternar entre o sistema online ou offline no seu servidor.
 
-<img src="https://i.imgur.com/SFKrAPw.png" />
+![](https://i.imgur.com/SFKrAPw.png)
 
 ### Exportar
 
 Use essa opção para exportar o conteúdo colocado no `/welcome message`.
 
-<img src="https://i.imgur.com/TYlhX98.png" />
+![](https://i.imgur.com/TYlhX98.png)
 
 ### Testar
 
 Use apenas se quiser testar o welcome consigo mesmo sem sair do servidor, toda a configuração deve ser feita primeiro.
 
-<img src="https://i.imgur.com/kY3t6VL.png" />
+![](https://i.imgur.com/kY3t6VL.png)
 
 ### Adicionarcargo
 
@@ -48,7 +48,7 @@ Use essa opção para adicionar um cargo a ser oferecido automaticamente a novos
 
 - `Cargo`: Identifique o cargo que será adicionado ao usuário que entrar.
 
-<img src="https://i.imgur.com/18ZbpDv.png" />
+![](https://i.imgur.com/18ZbpDv.png)
 
 ### Removercargo
 
@@ -56,4 +56,4 @@ Use essa opção para remover um cargo de ser oferecido automaticamente ao entra
 
 - `Cargo`: Identifique o cargo que não deve ser oferecido ao entrar que esteja ativado.
 
-<img src="https://i.imgur.com/FRbgYvo.png" />
+![](https://i.imgur.com/FRbgYvo.png)

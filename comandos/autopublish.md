@@ -8,7 +8,7 @@ Use essa opção para adicionar um novo canal de notícias ao bot e assim ele co
 
 - `Canal`: Identifique um canal de notícias para suas mensagens serem automaticamente publicadas em outros servidores.
 
-<img src="https://i.imgur.com/85653hL.png">
+<img src="https://i.imgur.com/85653hL.png" />
 
 ### Remover
 
@@ -16,10 +16,10 @@ Use essa opção para remover um novo canal de notícias ao bot e assim ele para
 
 - `Canal`: Identifique um canal de notícias para suas mensagens pararem de serem automaticamente publicadas em outros servidores.
 
-<img src="https://i.imgur.com/tgBGQvY.png">
+<img src="https://i.imgur.com/tgBGQvY.png" />
 
 ### Lista
 
 Esta irá listar todos os canais definidos até ao momento ativos no servidor.
 
-<img src="https://i.imgur.com/saIGypi.png">
+<img src="https://i.imgur.com/saIGypi.png" />

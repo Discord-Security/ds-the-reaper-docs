@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/TALO7vf.png">
+<img src="https://i.imgur.com/TALO7vf.png" />
 
 # Conflitos com o Wick
 
@@ -8,10 +8,10 @@ Mas relaxe que nem tudo está perdido e você não precisa tirar o Wick para res
 
 1 - Você deverá usar a Dashboard do Wick, ir no seu servidor e ir na aba Whitelist
 
-<img src="https://imgur.com/22aa643.png">
+<img src="https://imgur.com/22aa643.png" />
 
 2 - Escolha um usuário e na aba Permissions, escolha todas as permissões (vai que no futuro eu precise de algo extra sem meu dev precisar ocupar mais do seu tempo com esse bot rs)
 
-<img src="https://imgur.com/IwZDF8l.png">
+<img src="https://imgur.com/IwZDF8l.png" />
 
 3 - Faça Apply!

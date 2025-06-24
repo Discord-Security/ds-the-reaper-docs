@@ -11,10 +11,16 @@ Ative o sistema e seu servidor automaticamente será totalmente fechado para mem
 - `Motivo`: Envie um motivo e o bot irá gerar uma embed em todos os canais bloqueados avisando o porquê do servidor estar bloqueado.
 - `Tempo`: Informe o tempo que o servidor deve permanecer bloqueado por exemplo 7h 45m.
 
-<img src="https://i.imgur.com/kyNiKcR.png" />
+<img
+  src="https://i.imgur.com/kyNiKcR.png"
+  className="mx-auto"
+/>
 
 ### Desativar
 
 Desative o sistema após estar tudo resolvido e seu servidor voltará ao que era antes.
 
-<img src="https://i.imgur.com/VXntfx4.png" />
+<img
+  src="https://i.imgur.com/VXntfx4.png"
+  className="mx-auto"
+/>

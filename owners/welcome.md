@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/ad2exHs.jpeg" style="width:100%">
+<img src="https://i.imgur.com/ad2exHs.jpeg" style="width:100%" />
 
 # Variáveis do Bem-vindo
 
@@ -14,4 +14,3 @@
 | %serverId | ID do Servidor | 1025774982980186183 |
 | %serverIcon | Icon do Servidor | |
 | %contadorMembros | Total de Membros no servidor | 25 |
-

@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/7ip8xEr.png">
+<img src="https://i.imgur.com/7ip8xEr.png" />
 
 # Conflitos com o Security
 
@@ -8,4 +8,4 @@ Mas relaxe que nem tudo está perdido e você não precisa tirar o Security para
 
 Apenas basta usar o comando `/whitelist add_user user:992615467715940392 category:Users: All` 
 
-<img src="https://i.imgur.com/E2YrNZT.png">
+<img src="https://i.imgur.com/E2YrNZT.png" />

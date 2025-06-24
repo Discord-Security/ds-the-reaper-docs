@@ -12,7 +12,10 @@ Informações de um banimento, informando assim o usuário, id e motivo.
 
 - `ID`: Identifique o ID do usuário banido.
 
-<img src="https://i.imgur.com/nERFoI9.png" />
+<img
+  src="https://i.imgur.com/nERFoI9.png"
+  className="mx-auto"
+/>
 
 ### Pesquisar
 
@@ -20,10 +23,16 @@ Informações de vários banimentos, dizendo ID, tag e motivo destacando a palav
 
 - `Motivo`: Coloque como parâmetro de busca o motivo dado.
 
-<img src="https://i.imgur.com/dCWbZU4.png" />
+<img
+  src="https://i.imgur.com/dCWbZU4.png"
+  className="mx-auto"
+/>
 
 ### Exportar
 
 Exporte uma lista em txt com todos os banimentos do seu servidor.
 
-<img src="https://i.imgur.com/XxSmAa2.png" />
+<img
+  src="https://i.imgur.com/XxSmAa2.png"
+  className="mx-auto"
+/>

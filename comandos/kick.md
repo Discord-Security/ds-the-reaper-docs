@@ -2,11 +2,17 @@
 
 O comando de **/kick** expulsa um usuário do seu servidor.
 
-<img src="https://i.imgur.com/sxfQtBR.png">
+<img
+  src="https://i.imgur.com/sxfQtBR.png"
+  className="mx-auto"
+/>
 
 - `Usuário`: Este basta o mencioná-lo no servidor ou usar o ID de usuário.
 - `Motivo`: Diga o motivo pela expulsão do usuário.
 
-## Exemplo 
+## Exemplo
 
-<img src="https://i.imgur.com/TjUqteQ.png">
+<img
+  src="https://i.imgur.com/TjUqteQ.png"
+  className="mx-auto"
+/>
