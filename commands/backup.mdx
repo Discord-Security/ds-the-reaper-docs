@@ -1,0 +1,36 @@
+---
+title: "Backup"
+description: "Faça uma cópia de segurança completa do seu servidor."
+mode: 'wide'
+---
+
+Para usá-lo, digite **/backup**.
+
+O mesmo irá ter 3 grupos:
+
+<Tabs>
+  <Tab title="Criar">
+    Crie o backup, este irá dar um ID e uma senha para você utilizá-lo quando estiver disposto a tomar tal medida.
+
+    ![](https://i.imgur.com/RzDVB8P.png)
+  </Tab>
+  <Tab title="Carregar">
+    Carregue com um ID e uma senha o backup criado com esse ID.
+
+    - `BackupID`: Identifique o ID do Backup gerado no **/backup criar**.
+    - `Senha`: Identifique a senha de Backups do servidor onde o backup será carregado.
+
+    <Danger>
+      **CUIDADO\!** Você ao utilizar este comando está consentindo o bot a destruir todo o seu servidor para refazer tudo o que foi guardado durante o backup.
+    </Danger>
+    ![](https://i.imgur.com/HozJIKs.png)
+  </Tab>
+  <Tab title="Remover">
+    Remova do nosso banco de dados, o backup criado com esse ID.
+
+    - `BackupID`: Identifique o ID do Backup gerado no **/backup criar**.
+    - `Senha`: Identifique a senha de Backups do servidor onde o backup será apagado.
+
+    ![](https://i.imgur.com/AqFe00W.png)
+  </Tab>
+</Tabs>

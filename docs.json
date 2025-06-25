@@ -1,102 +1,110 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
-  "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
-  },
-  "favicon": "/favicon.svg",
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
+    "$schema": "https://mintlify.com/docs.json",
+    "theme": "palm",
+    "name": "The Reaper",
+    "colors": {
+        "primary": "#e6353e",
+        "light": "#07C983",
+        "dark": "#15803D"
+    },
+    "favicon": "/images/logo.png",
+    "navigation": {
         "groups": [
-          {
-            "group": "Get Started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Essentials",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
-            ]
-          }
+            {
+                "group": "Donos de servidores",
+                "icon": "crown",
+                "pages": [
+                    "owners/dados",
+                    "owners/gravidades",
+                    "owners/partners",
+                    "owners/protocolos",
+                    "owners/rss",
+                    "owners/welcome"
+                ]
+            },
+            {
+                "group": "Comandos",
+                "icon": "square-slash",
+                "pages": [
+                    {
+                        "group": "Moderação",
+                        "icon": "gavel",
+                        "pages": [
+                            "commands/ban",
+      "commands/massban",
+      "commands/unban",
+      "commands/mute",
+      "commands/unmute",
+      "commands/kick",
+      "commands/lock",
+      "commands/unlock",
+      "commands/lockdown",
+      "commands/clear",
+      "commands/warn",
+      "commands/delete_channels"
+                        ]
+                    },
+                    {
+                        "group": "Gerenciamento",
+                        "icon": "bolt",
+                        "pages": [
+                            "commands/antifake",
+      "commands/automessage",
+      "commands/autopublish",
+      "commands/backup",
+      "commands/logs",
+      "commands/proof",
+      "commands/partners_warn",
+      "commands/pause_invites",
+      "commands/reset",
+      "commands/welcome",
+      "commands/exit"
+                        ]
+                    },
+                    {
+                        "group": "Informação",
+                        "icon": "info",
+                        "pages": [
+                            "commands/bans",
+                            "commands/serverinfo",
+                            "commands/userinfo"
+                        ]
+                    }
+                ]
+            },
+            {
+                "group": "Tutoriais",
+                "pages": [
+                    "tutorial/devsettings",
+                    "tutorial/security",
+                    "tutorial/wick"
+                ]
+            }
         ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+    },
+    "logo": {
+        "light": "/images/logo.png",
+        "dark": "/images/logo.png"
+    },
+    "navbar": {
+        "links": [
+            {
+                "label": "Suporte",
+                "href": "https://discord.gg/TnvvwUStHK"
+            },
+            {
+                "label": "Adicionar Bot",
+                "href": "https://discord.com/api/oauth2/authorize?client_id=992615467715940392&permissions=8&scope=bot%20applications.commands"
+            },
+            {
+                "label": "Créditos",
+                "href": "https://thereaper.mintlify.app/tutorial/credits"
+            }
+        ],
+        "primary": {
+            "type": "button",
+            "label": "Dashboard",
+            "href": "https://dashboard.mintlify.com"
         }
-      ]
     }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
-  }
 }
