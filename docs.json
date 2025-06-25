@@ -4,8 +4,8 @@
     "name": "The Reaper",
     "colors": {
         "primary": "#e6353e",
-        "light": "#07C983",
-        "dark": "#15803D"
+        "light": "#e6353e",
+        "dark": "#e6353e"
     },
     "favicon": "/images/logo.png",
     "navigation": {
