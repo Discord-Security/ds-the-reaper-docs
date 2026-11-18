@@ -1,41 +1,73 @@
 ---
-title: "Bans"
-description: "Faz uma pesquisa ou procura o máximo de detalhes sobre os banimentos."
-mode: "wide"
+title: "Consultar e exportar banimentos com o comando /bans"
 sidebarTitle: "Bans"
+description: "Use o /bans para consultar banimentos do servidor: veja os detalhes de um ban, pesquise por motivo ou exporte a lista completa em um arquivo txt."
+icon: "list"
 ---
 
-Para usá-lo, digite **/bans**.
+O comando **/bans** mostra o máximo de detalhes sobre os banimentos do seu servidor. Você pode consultar um banimento específico, pesquisar por motivo ou exportar a lista inteira.
 
-O mesmo irá ter 3 grupos:
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
+
+## Como usar
+
+Digite **/bans** no chat e escolha uma das três opções abaixo.
 
 <Tabs>
   <Tab title="Info">
-    Informações de um banimento, informando assim o usuário, id e motivo.
+    Mostra as informações de um banimento: o usuário, o ID e o motivo.
 
-    - `ID`: Identifique o ID do usuário banido.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `ID` | O ID do usuário banido. |
 
-    <img
-      src="https://i.imgur.com/nERFoI9.png"
-      className="mx-auto"
-    />
+    <Frame caption="Opção Info do comando /bans no Discord.">
+      <img
+        src="https://i.imgur.com/nERFoI9.png"
+        alt="Opção Info do comando /bans mostrando os detalhes de um banimento"
+      />
+    </Frame>
   </Tab>
   <Tab title="Pesquisar">
-    Informações de vários banimentos, dizendo ID, tag e motivo destacando a palavra-chave.
+    Mostra vários banimentos de uma vez, com ID, tag e motivo, destacando a palavra-chave que você pesquisou.
 
-    - `Motivo`: Coloque como parâmetro de busca o motivo dado.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `Motivo` | O motivo que você quer usar como busca. |
 
-    <img
-      src="https://i.imgur.com/dCWbZU4.png"
-      className="mx-auto"
-    />
+    <Frame caption="Opção Pesquisar do comando /bans no Discord.">
+      <img
+        src="https://i.imgur.com/dCWbZU4.png"
+        alt="Opção Pesquisar do comando /bans listando banimentos por motivo"
+      />
+    </Frame>
   </Tab>
   <Tab title="Exportar">
-    Exporte uma lista em txt com todos os banimentos do seu servidor.
+    Exporta uma lista em arquivo txt com todos os banimentos do seu servidor.
 
-    <img
-      src="https://i.imgur.com/XxSmAa2.png"
-      className="mx-auto"
-    />
+    <Frame caption="Opção Exportar do comando /bans no Discord.">
+      <img
+        src="https://i.imgur.com/XxSmAa2.png"
+        alt="Opção Exportar do comando /bans gerando a lista de banimentos"
+      />
+    </Frame>
   </Tab>
 </Tabs>
+
+<Tip>
+  Não sabe como copiar o ID de um usuário? Siga o guia [Como pegar IDs no Discord](/tutorial/devsettings).
+</Tip>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Ban" icon="gavel" href="/commands/ban">
+    Bana um usuário do servidor.
+  </Card>
+
+  <Card title="Unban" icon="user-check" href="/commands/unban">
+    Desfaça um banimento.
+  </Card>
+</Columns>

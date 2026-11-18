@@ -1,26 +1,93 @@
 ---
-title: "Ban"
-description: "Bane um usuário do seu servidor."
-mode: "wide"
+title: "Banir um usuário com o comando /ban"
+sidebarTitle: "Ban"
+description: "Use o /ban para banir um usuário do seu servidor e escolher a gravidade do banimento: 1 só no seu servidor, 2 em toda a rede The Reaper."
+icon: "gavel"
 ---
 
-Para usá-lo, digite **/ban**.
+O comando **/ban** bane um usuário do seu servidor. Ao banir, você também escolhe a **gravidade**, que define se o banimento vale só no seu servidor ou em toda a rede The Reaper.
 
-<img
-  src="https://i.imgur.com/arVJs2N.png"
-  className="mx-auto"
-/>
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
 
-O mesmo irá pedir 2 paramêtros:
+## Como usar
 
-- `Usuário`: Este basta o mencioná-lo no servidor ou usar o ID de usuário.
-- `Gravidade`: Deverá ser escolhida de 1 a 2 dependendo do que o usuário fez.
+Clique em **Próximo** para ver o comando sendo preenchido, campo por campo, exatamente como acontece no Discord.
 
-Se precisares de ajuda sobre as gravidades de banimento, clica [aqui](/owners/gravidades)
+<CommandDemo />
+
+## O que colocar em cada campo
+
+| Campo | O que colocar |
+| --- | --- |
+| `Usuário` | Mencione o usuário no servidor ou use o ID dele. |
+| `Gravidade` | Escolha **1** ou **2**, dependendo do que o usuário fez. |
+
+<Tip>
+  Não sabe qual gravidade escolher? Veja a diferença entre elas em [Gravidades de banimento](/owners/gravidades).
+</Tip>
+
+<Tip>
+  Não sabe como copiar o ID de um usuário? Siga o guia [Como pegar IDs no Discord](/tutorial/devsettings).
+</Tip>
 
 ## Exemplo
 
-<img
-  src="https://i.imgur.com/9IkcsVz.png"
-  className="mx-auto"
-/>
+<Frame caption="Resultado do comando /ban no Discord.">
+  <img
+    src="https://i.imgur.com/9IkcsVz.png"
+    alt="Exemplo de um banimento feito com o comando /ban no Discord"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Unban" icon="user-check" href="/commands/unban">
+    Desfaça um banimento.
+  </Card>
+
+  <Card title="Massban" icon="users" href="/commands/massban">
+    Bana vários usuários de uma vez.
+  </Card>
+
+  <Card title="Bans" icon="list" href="/commands/bans">
+    Consulte, pesquise e exporte os banimentos do servidor.
+  </Card>
+
+  <Card title="Gravidades de banimento" icon="scale-balanced" href="/owners/gravidades">
+    Entenda a gravidade 1 e a gravidade 2.
+  </Card>
+</Columns>
+
+export const CommandDemo = () => {
+  const command = "/ban";
+  const fields = [
+    { name: "Usuário", value: "@usuário", hint: "mencione o usuário ou cole o ID dele." },
+    { name: "Gravidade", value: "2", hint: "escolha 1 ou 2." },
+  ];
+  const [step, setStep] = useState(0);
+  const done = step === fields.length;
+  const btn = { padding: "6px 12px", borderRadius: 6, border: "1px solid rgba(127,127,127,.35)", background: "transparent", color: "inherit", font: "inherit", cursor: "pointer" };
+  return (
+    <div className="not-prose" style={{ border: "1px solid rgba(127,127,127,.25)", borderRadius: 12, padding: 16 }}>
+      <div style={{ background: "#383a40", color: "#dbdee1", borderRadius: 8, padding: "10px 12px", display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center", fontSize: 15 }}>
+        <span style={{ background: "#5865f2", color: "#fff", borderRadius: 4, padding: "1px 8px", fontWeight: 600 }}>{command}</span>
+        {fields.slice(0, step).map((f) => (
+          <span key={f.name} style={{ background: "#2b2d31", borderRadius: 4, padding: "1px 8px" }}>
+            <span style={{ opacity: 0.6 }}>{f.name}: </span>{f.value}
+          </span>
+        ))}
+        {!done && <span style={{ opacity: 0.5 }}>{fields[step].name}</span>}
+      </div>
+      <p style={{ margin: "12px 0", fontSize: 14 }}>
+        {done ? "Tudo preenchido. Pressione Enter para enviar o comando." : (step === 0 ? "Digite " + command + " no chat e escolha o comando na lista do Discord. " : "") + "Próximo campo, " + fields[step].name + ": " + fields[step].hint}
+      </p>
+      <div style={{ display: "flex", gap: 8 }}>
+        <button type="button" style={btn} disabled={step === 0} onClick={() => setStep(step - 1)}>Voltar</button>
+        <button type="button" style={btn} disabled={done} onClick={() => setStep(step + 1)}>Próximo</button>
+      </div>
+    </div>
+  );
+};

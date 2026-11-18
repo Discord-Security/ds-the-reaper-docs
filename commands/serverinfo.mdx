@@ -1,23 +1,75 @@
 ---
-title: "ServerInfo"
-description: "Visualiza várias informações do servidor, como também coisas em comum com o bot."
-mode: "wide"
+title: "Ver informações de um servidor com o comando /serverinfo"
 sidebarTitle: "Serverinfo"
+description: "Use o /serverinfo para ver informações de um servidor, incluindo o que ele tem em comum com o bot. Informe o ID ou o nome completo do servidor."
+icon: "server"
 ---
 
-Para usá-lo, digite **/serverinfo**.
+O comando **/serverinfo** mostra várias informações de um servidor, além do que ele tem em comum com o bot. Você indica o servidor pelo ID ou pelo nome completo.
 
-<img
-  src="https://i.imgur.com/CMxm8GL.png"
-  className="mx-auto"
-  style={{ width:"100%" }}
-/>
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
 
-- `ID`: Identifique o ID do servidor ou o nome completo dele.
+## Como usar
+
+Clique em **Próximo** para ver o comando sendo preenchido, como acontece no Discord.
+
+<CommandDemo />
+
+## O que colocar em cada campo
+
+| Campo | O que colocar |
+| --- | --- |
+| `ID` | O ID do servidor ou o nome completo dele. |
 
 ## Exemplo
 
-<img
-  src="https://i.imgur.com/QiEuNyn.png"
-  className="mx-auto"
-/>
+<Frame caption="Resultado do comando /serverinfo no Discord.">
+  <img
+    src="https://i.imgur.com/QiEuNyn.png"
+    alt="Exemplo das informações de um servidor mostradas pelo comando /serverinfo"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Userinfo" icon="user" href="/commands/userinfo">
+    Veja as informações de um usuário.
+  </Card>
+
+  <Card title="Bans" icon="list" href="/commands/bans">
+    Consulte os banimentos do servidor.
+  </Card>
+</Columns>
+
+export const CommandDemo = () => {
+  const command = "/serverinfo";
+  const fields = [
+    { name: "ID", value: "ID do servidor", hint: "informe o ID do servidor ou o nome completo dele." },
+  ];
+  const [step, setStep] = useState(0);
+  const done = step === fields.length;
+  const btn = { padding: "6px 12px", borderRadius: 6, border: "1px solid rgba(127,127,127,.35)", background: "transparent", color: "inherit", font: "inherit", cursor: "pointer" };
+  return (
+    <div className="not-prose" style={{ border: "1px solid rgba(127,127,127,.25)", borderRadius: 12, padding: 16 }}>
+      <div style={{ background: "#383a40", color: "#dbdee1", borderRadius: 8, padding: "10px 12px", display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center", fontSize: 15 }}>
+        <span style={{ background: "#5865f2", color: "#fff", borderRadius: 4, padding: "1px 8px", fontWeight: 600 }}>{command}</span>
+        {fields.slice(0, step).map((f) => (
+          <span key={f.name} style={{ background: "#2b2d31", borderRadius: 4, padding: "1px 8px" }}>
+            <span style={{ opacity: 0.6 }}>{f.name}: </span>{f.value}
+          </span>
+        ))}
+        {!done && <span style={{ opacity: 0.5 }}>{fields[step].name}</span>}
+      </div>
+      <p style={{ margin: "12px 0", fontSize: 14 }}>
+        {done ? "Tudo preenchido. Pressione Enter para enviar o comando." : (step === 0 ? "Digite " + command + " no chat e escolha o comando na lista do Discord. " : "") + "Próximo campo, " + fields[step].name + ": " + fields[step].hint}
+      </p>
+      <div style={{ display: "flex", gap: 8 }}>
+        <button type="button" style={btn} disabled={step === 0} onClick={() => setStep(step - 1)}>Voltar</button>
+        <button type="button" style={btn} disabled={done} onClick={() => setStep(step + 1)}>Próximo</button>
+      </div>
+    </div>
+  );
+};

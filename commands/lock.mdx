@@ -1,21 +1,75 @@
 ---
-title: "Lock"
-description: "Bloqueia o canal atual ou todos os canais da categoria definidos para @everyone somente ler."
-mode: "wide"
+title: "Bloquear um canal ou categoria com o comando /lock"
+sidebarTitle: "Lock"
+description: "Use o /lock para bloquear o canal atual ou todos os canais de uma categoria, deixando o @everyone com permissão somente de leitura."
+icon: "lock"
 ---
 
-Para usá-lo, digite **/lock**.
+O comando **/lock** bloqueia o canal atual ou todos os canais de uma categoria, deixando o cargo @everyone com permissão somente de leitura. Para reverter, use o [/unlock](/commands/unlock).
 
-<img
-  src="https://i.imgur.com/6nyovzF.png"
-  className="mx-auto"
-/>
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
 
-- `Categoria`: Mencione a categoria que deve ter seus canais bloqueados.
+## Como usar
+
+Clique em **Próximo** para ver o comando sendo preenchido, campo por campo, como acontece no Discord.
+
+<CommandDemo />
+
+## O que colocar em cada campo
+
+| Campo | O que colocar |
+| --- | --- |
+| `Categoria` | Mencione a categoria que deve ter os canais bloqueados. |
 
 ## Exemplo
 
-<img
-  src="https://i.imgur.com/FsJj9eo.png"
-  className="mx-auto"
-/>
+<Frame caption="Resultado do comando /lock no Discord.">
+  <img
+    src="https://i.imgur.com/FsJj9eo.png"
+    alt="Exemplo de canal bloqueado com o comando /lock no Discord"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Unlock" icon="lock-open" href="/commands/unlock">
+    Desbloqueie o canal ou a categoria.
+  </Card>
+
+  <Card title="Lockdown" icon="shield-halved" href="/commands/lockdown">
+    Feche todos os chats do servidor de uma vez.
+  </Card>
+</Columns>
+
+export const CommandDemo = () => {
+  const command = "/lock";
+  const fields = [
+    { name: "Categoria", value: "#categoria", hint: "mencione a categoria que deve ter os canais bloqueados." },
+  ];
+  const [step, setStep] = useState(0);
+  const done = step === fields.length;
+  const btn = { padding: "6px 12px", borderRadius: 6, border: "1px solid rgba(127,127,127,.35)", background: "transparent", color: "inherit", font: "inherit", cursor: "pointer" };
+  return (
+    <div className="not-prose" style={{ border: "1px solid rgba(127,127,127,.25)", borderRadius: 12, padding: 16 }}>
+      <div style={{ background: "#383a40", color: "#dbdee1", borderRadius: 8, padding: "10px 12px", display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center", fontSize: 15 }}>
+        <span style={{ background: "#5865f2", color: "#fff", borderRadius: 4, padding: "1px 8px", fontWeight: 600 }}>{command}</span>
+        {fields.slice(0, step).map((f) => (
+          <span key={f.name} style={{ background: "#2b2d31", borderRadius: 4, padding: "1px 8px" }}>
+            <span style={{ opacity: 0.6 }}>{f.name}: </span>{f.value}
+          </span>
+        ))}
+        {!done && <span style={{ opacity: 0.5 }}>{fields[step].name}</span>}
+      </div>
+      <p style={{ margin: "12px 0", fontSize: 14 }}>
+        {done ? "Tudo preenchido. Pressione Enter para enviar o comando." : (step === 0 ? "Digite " + command + " no chat e escolha o comando na lista do Discord. " : "") + "Próximo campo, " + fields[step].name + ": " + fields[step].hint}
+      </p>
+      <div style={{ display: "flex", gap: 8 }}>
+        <button type="button" style={btn} disabled={step === 0} onClick={() => setStep(step - 1)}>Voltar</button>
+        <button type="button" style={btn} disabled={done} onClick={() => setStep(step + 1)}>Próximo</button>
+      </div>
+    </div>
+  );
+};

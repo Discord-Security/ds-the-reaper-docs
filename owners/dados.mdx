@@ -1,28 +1,55 @@
 ---
-title: "O que é guardado dentro do The Reaper?"
-description: "O The Reaper guarda alguns dados importantes do Discord dentro do seu banco de dados."
-mode: "wide"
-sidebarTitle: "Utilização de dados"
+title: "O que o The Reaper guarda sobre o seu servidor"
+sidebarTitle: "Dados guardados"
+description: "Veja quais dados do Discord o The Reaper guarda no banco de dados, como eles são usados e como apagá-los por completo ou parcialmente."
+icon: "database"
 ---
 
-<img
-  src="https://i.imgur.com/x0bNexm.png"
-  alt=""
-  className="mx-auto"
-/>
+O The Reaper guarda alguns dados importantes do Discord no banco de dados dele para que as funções do bot funcionem. Esta página mostra o que fica guardado e como você pode apagar esses dados quando quiser.
 
-O The Reaper armazena dados relacionados ao seu servidor, tais como:
+## O que é guardado
 
-- **Comandos** usados com seus argumentos, entradas e saídas de usuários;
-- **ID** do servidor e dos canais que usam comandos que exigem dados permanentes no nosso banco de dados;
-- **Logs**, **punições** e **avisos** realizados com o The Reaper;
-- **Senhas**, **websites**, **cargos** e **mensagens** necessários para algumas funcionalidades;
-- Caso o servidor permita, a mensagem de parceria também é armazenada.
+O The Reaper armazena dados relacionados ao seu servidor, como:
+
+- **Comandos** usados, com seus argumentos, entradas e saídas de usuários.
+- **ID** do servidor e dos canais que usam comandos que exigem dados permanentes no banco de dados.
+- **Logs**, **punições** e **avisos** realizados com o The Reaper.
+- **Senhas**, **websites**, **cargos** e **mensagens** necessários para algumas funcionalidades.
+- A mensagem de parceria, caso o servidor permita.
 
 <Info>
-  Gostaríamos de deixar claro que não armazenamos nada que possa comprometer a privacidade de usuários, mensagens ou informações.
+  O The Reaper não armazena nada que possa comprometer a privacidade de usuários, mensagens ou informações.
 </Info>
 
-Para remover esses dados completamente, eles são apagados quando você remove o nosso bot da sua comunidade após 6 horas ou ao ser executado o comando `/reset`.
+## Como apagar os dados
 
-Para remover esses dados parcialmente, eles são automaticamente apagados quando as funções que normalmente usam esses dados são desativadas.
+<Tabs>
+  <Tab title="Apagar tudo">
+    Para remover todos os dados do servidor, use uma destas opções:
+
+    - **Remova o The Reaper do servidor.** Os dados são apagados após 6 horas.
+    - **Use o comando [/reset](/commands/reset).** Ele retira do banco de dados todos os dados do seu servidor.
+  </Tab>
+  <Tab title="Apagar em parte">
+    Os dados de cada função são apagados automaticamente quando você desativa a função que os usa. Por exemplo, ao desativar um sistema que guarda dados do servidor, os dados dele deixam de ficar guardados.
+  </Tab>
+</Tabs>
+
+<Frame caption="Resumo visual dos dados guardados pelo The Reaper.">
+  <img
+    src="https://i.imgur.com/x0bNexm.png"
+    alt="Resumo visual dos dados guardados pelo The Reaper"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Reset" icon="rotate-left" href="/commands/reset">
+    Apague todos os dados do seu servidor do banco de dados.
+  </Card>
+
+  <Card title="Backup" icon="cloud-arrow-up" href="/commands/backup">
+    Faça uma cópia de segurança completa do servidor.
+  </Card>
+</Columns>

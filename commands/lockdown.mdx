@@ -1,31 +1,68 @@
 ---
-title: "Lockdown"
-description: "Permite encerrar todos os chats do servidor para impedir que membros digitem, este pode ser útil em casos como de raid."
-mode: "wide"
+title: "Fechar o servidor inteiro com o comando /lockdown"
+sidebarTitle: "Lockdown"
+description: "Use o /lockdown para fechar todos os chats do servidor e impedir que membros digitem, útil em raids. Defina motivo e tempo e desative depois."
+icon: "shield-halved"
 ---
 
-Para usar, digite **/lockdown**.
+O comando **/lockdown** fecha todos os chats do servidor para impedir que os membros digitem. Ele é útil em situações como uma raid: os membros continuam vendo os chats, mas não conseguem escrever.
 
-O mesmo irá ter 2 grupos:
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
+
+## Como usar
+
+Digite **/lockdown** no chat e escolha uma das duas opções abaixo.
 
 <Tabs>
   <Tab title="Ativar">
-    Ative o sistema e seu servidor automaticamente será totalmente fechado para membros digitarem, apenas poderão visualizar os chats e se possível com o aviso que você colocou.
+    Ativa o sistema e o servidor fica totalmente fechado para os membros digitarem. Eles só poderão visualizar os chats e, se você tiver informado, ver o aviso com o motivo.
 
-    - `Motivo`: Envie um motivo e o bot irá gerar uma embed em todos os canais bloqueados avisando o porquê do servidor estar bloqueado.
-    - `Tempo`: Informe o tempo que o servidor deve permanecer bloqueado, por exemplo, 7h 45m.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `Motivo` | Envie um motivo e o bot cria uma embed em todos os canais bloqueados avisando por que o servidor está bloqueado. |
+    | `Tempo` | O tempo que o servidor deve permanecer bloqueado, por exemplo `7h 45m`. |
 
-    <img
-      src="https://i.imgur.com/kyNiKcR.png"
-      className="mx-auto"
-    />
+    <Frame caption="Opção Ativar do comando /lockdown no Discord.">
+      <img
+        src="https://i.imgur.com/kyNiKcR.png"
+        alt="Opção Ativar do comando /lockdown no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Desativar">
-    Desative o sistema após estar tudo resolvido e seu servidor voltará ao que era antes.
+    Desativa o sistema depois que tudo estiver resolvido e o servidor volta a ficar como estava antes.
 
-    <img
-      src="https://i.imgur.com/VXntfx4.png"
-      className="mx-auto"
-    />
+    <Frame caption="Opção Desativar do comando /lockdown no Discord.">
+      <img
+        src="https://i.imgur.com/VXntfx4.png"
+        alt="Opção Desativar do comando /lockdown no Discord"
+      />
+    </Frame>
   </Tab>
 </Tabs>
+
+## Quando usar
+
+Use o lockdown quando o servidor estiver sob ataque e você precisar parar tudo rapidamente. Depois, com a situação controlada, desative o sistema para devolver o servidor ao normal.
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Massban" icon="users" href="/commands/massban">
+    Bana vários usuários de uma vez.
+  </Card>
+
+  <Card title="Reverter raid" icon="clock-rotate-left" href="/commands/reverter-raid">
+    Volte 24 horas no tempo após uma raid.
+  </Card>
+
+  <Card title="Pausar convites" icon="pause" href="/commands/pause_invites">
+    Impeça a entrada de novas pessoas no servidor.
+  </Card>
+
+  <Card title="Lock" icon="lock" href="/commands/lock">
+    Bloqueie só um canal ou uma categoria.
+  </Card>
+</Columns>
