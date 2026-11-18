@@ -1,27 +1,39 @@
 ---
-title: "Gravidades de Banimento"
-description: "Considere qual gravidade de banimento deseja usar para cada punição."
-mode: "wide"
+title: "Banimentos na rede e níveis de gravidade"
+sidebarTitle: "Rede e gravidades"
+description: "Entenda as diferenças entre os níveis 1 e 2 e saiba quando uma punição fica apenas no seu servidor ou é compartilhada na rede The Reaper."
+icon: "shield"
 ---
 
-![](/images/gravidadesbanner.png)
+O The Reaper distingue banimentos por **gravidade 1** e **gravidade 2**. Essa escolha afeta o alcance das punições e dos desbanimentos entre os servidores participantes da rede.
 
-## Gravidade 1
+## Compare os dois níveis
 
-Lembre-se de que a gravidade de banimento nível 1 é a mais baixa. Portanto, um usuário que faça um spam leve de mensagens ou um flood leve deve ser banido com a gravidade de banimento 1.
+|  | Gravidade 1 | Gravidade 2 |
+| --- | --- | --- |
+| Tipo de ocorrência descrita | Spam ou flood leve | Divulgação de convites, comentários preconceituosos, ameaças, raids ou flood excessivo |
+| Alcance do banimento | Somente o servidor onde foi executado | Servidores participantes da rede |
+| Alcance do desbanimento | Somente o servidor onde foi executado | Todos os servidores abrangidos pelo protocolo |
+| Uso na rede | A documentação antiga informa que não houve adesão ao banimento coletivo no nível 1 | A documentação antiga descreve esse nível como o usado para participar da rede |
 
-<Check>
-  Em caso de desbanimentos, o efeito será que este desbanirá apenas no servidor executado.
-</Check>
+<Warning>
+  A gravidade 2 pode ter efeitos além do seu servidor. Antes de selecioná-la, confira a ocorrência e a política da rede.
+</Warning>
 
-![](/images/gravidade1.png)
+## Como selecionar no Discord
 
-## Gravidade 2
+<Steps>
+  <Step title="Escolha a ação">
+    Abra [**/ban**](/commands/ban), [**/massban**](/commands/massban) ou [**/unban**](/commands/unban).
+  </Step>
+  <Step title="Preencha o campo Gravidade">
+    Selecione 1 ou 2 de acordo com o caso e com o alcance pretendido.
+  </Step>
+  <Step title="Confirme o impacto">
+    Revise a escolha antes de enviar o comando.
+  </Step>
+</Steps>
 
-A gravidade 2 já abrange alguns comportamentos que não devem ser tolerados, como a divulgação de convites de servidores Discord ou comentários preconceituosos, ameaças ao servidor como raids ou ataques de hackers, floods excessivos, entre outros.
+## Saiba mais
 
-<Check>
-  Em caso de desbanimentos, o efeito será que este desbanirá em todos os servidores.
-</Check>
-
-![](/images/gravidade2.png)
+Consulte [banimentos](/commands/ban), [desbanimentos](/commands/unban) e o [servidor de suporte](https://discord.gg/TnvvwUStHK) para esclarecer dúvidas sobre as regras da rede.

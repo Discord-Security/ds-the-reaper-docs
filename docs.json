@@ -20,7 +20,7 @@
             ]
           },
             {
-                "group": "Donos de servidores",
+                "group": "Guias e variáveis",
                 "icon": "crown",
                 "pages": [
                     "owners/dados",
@@ -45,33 +45,27 @@
       "commands/mute",
       "commands/unmute",
       "commands/kick",
-      "commands/lock",
-      "commands/unlock",
-      "commands/lockdown",
       "commands/clear",
       "commands/warn",
-      "commands/delete_channels"
+      "commands/delete_channels",
+      "commands/proof"
                         ]
                     },
                     {
-                        "group": "Gerenciamento",
+                        "group": "Proteção",
                         "icon": "bolt",
                         "pages": [
                             "commands/antifake",
                             "commands/antiflood",
                             "commands/antispam",
-      "commands/automessage",
-      "commands/autopublish",
       "commands/backup",
-      "commands/logs",
-      "commands/proof",
-      "commands/partners_warn",
       "commands/pause_invites",
       "commands/reset",
       "commands/reverter-raid",
-      "commands/welcome",
-      "commands/exit"
-                        ]
+      "commands/lock",
+      "commands/unlock",
+      "commands/lockdown"
+    ]
                     },
                     {
                         "group": "Informação",
@@ -81,11 +75,22 @@
                             "commands/serverinfo",
                             "commands/userinfo"
                         ]
+                    },
+                    {
+                      "group": "Automação",
+                      "pages": [
+                        "commands/automessage",
+                        "commands/autopublish",
+                        "commands/logs",
+                        "commands/partners_warn",
+                        "commands/welcome",
+                        "commands/exit"
+                      ]
                     }
                 ]
             },
             {
-                "group": "Tutoriais",
+                "group": "Tutoriais de apoio",
                 "pages": [
                     "tutorial/devsettings",
                     "tutorial/security",
