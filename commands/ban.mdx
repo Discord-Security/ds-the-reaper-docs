@@ -45,6 +45,40 @@ O mesmo irá pedir 2 paramêtros:
 
 Se precisares de ajuda sobre as gravidades de banimento, clica [aqui](/owners/gravidades)
 
+## Exemplo visual: preenchendo /ban
+
+A ilustração abaixo mostra o preenchimento no Discord. É apenas um exemplo, não executa nenhuma punição.
+
+<DiscordBanExample />
+
+<Frame caption="Exemplo real de resposta do bot, preservado da documentação anterior">
+  <img
+    src="https://i.imgur.com/9IkcsVz.png"
+    alt="Resposta do The Reaper após usar o comando ban"
+  />
+</Frame>
+
+export const DiscordBanExample = () => {
+  const [step, setStep] = useState(0);
+  const items = [
+    {title:"1. Comando",command:"/ban",hint:"Abra o comando do The Reaper no Discord."},
+    {title:"2. Usuário",command:"/ban · Usuário: @membro",hint:"Selecione o membro que será banido."},
+    {title:"3. Gravidade",command:"/ban · Usuário: @membro · Gravidade: 1",hint:"Escolha 1 ou 2. Confira as regras da rede antes de enviar."}
+  ];
+  return <div className="not-prose rounded-xl overflow-hidden border border-[#4e5058]" style={{background:"#313338",color:"#f2f3f5"}}>
+    <div style={{padding:12,background:"#2b2d31",fontWeight:650}}>Discord · Exemplo ilustrativo</div>
+    <div style={{padding:16}}>
+      <div style={{background:"#383a40",borderRadius:8,padding:14,overflowWrap:"anywhere"}}>{items[step].command}</div>
+      <p style={{color:"#b5bac1",fontSize:13,marginTop:12}}>{items[step].hint}</p>
+      <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,marginTop:14}}>
+        <button type="button" disabled={step===0} onClick={()=>setStep(Math.max(0,step-1))} style={{background:"#4e5058",borderRadius:6,padding:"8px 12px",opacity:step===0?0.5:1}}>Anterior</button>
+        <span style={{fontSize:12}}>{items[step].title}</span>
+        <button type="button" onClick={()=>setStep((step+1)%items.length)} style={{background:"#5865f2",borderRadius:6,padding:"8px 12px"}}>{step===2?"Recomeçar":"Próximo"}</button>
+      </div>
+    </div>
+  </div>;
+};
+
 ## Comandos e guias relacionados
 
 [Consulte este guia relacionado](/owners/gravidades). Se precisar de ajuda para executar o comando, entre no [servidor de suporte](https://discord.gg/TnvvwUStHK).
