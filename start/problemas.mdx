@@ -1,0 +1,30 @@
+---
+title: "Resolva problemas com o The Reaper"
+sidebarTitle: "Problemas comuns"
+description: "Veja o que verificar quando os comandos do The Reaper não aparecem, a moderação falha, relatórios não chegam ou há conflitos com outros bots."
+icon: "life-buoy"
+---
+
+Se o The Reaper não estiver funcionando como esperado, comece pelas verificações abaixo. Muitas falhas são causadas por permissões, posição dos cargos ou configurações ainda desativadas.
+
+<AccordionGroup>
+  <Accordion title="O comando não aparece quando digito /">
+    Confirme que o bot está no servidor e que você está usando um canal que permite executar comandos de aplicativos. Verifique as permissões dos aplicativos nas configurações do servidor e tente novamente.
+  </Accordion>
+  <Accordion title="O bot não consegue moderar um membro">
+    Em **Configurações do servidor → Cargos**, confirme que o cargo do The Reaper está acima do cargo mais alto do membro que você quer moderar. O Discord também restringe ações contra proprietários e outros membros protegidos pela hierarquia de cargos.
+  </Accordion>
+  <Accordion title="Configurei o Antifake, mas ele não age">
+    Verifique as opções **Tempo**, **Punição**, **Canal** e **Ativar** em `/antifake`. Confirme que o sistema foi ativado e que o bot pode executar as ações previstas.
+  </Accordion>
+  <Accordion title="Não aparecem relatórios no canal escolhido">
+    Confira se o canal configurado está correto e se o bot tem acesso para visualizar e enviar mensagens nele.
+  </Accordion>
+  <Accordion title="Outro bot de segurança interfere nas punições">
+    Consulte os guias de compatibilidade com [Wick](/tutorial/wick) e [Security](/tutorial/security). Uma configuração de proteção de outro bot pode bloquear as ações do The Reaper.
+  </Accordion>
+</AccordionGroup>
+
+## Ainda precisa de ajuda?
+
+Entre no [servidor oficial de suporte](https://discord.gg/TnvvwUStHK) e descreva o comando usado, o que você esperava e a mensagem de erro, se houver. Não envie senhas, tokens ou dados privados.

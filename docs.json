@@ -10,6 +10,15 @@
     "favicon": "/images/logo.png",
     "navigation": {
         "groups": [
+          {
+            "group": "Começar",
+            "pages": [
+              "start/index",
+              "start/adicionar",
+              "start/configuracao",
+              "start/problemas"
+            ]
+          },
             {
                 "group": "Donos de servidores",
                 "icon": "crown",
