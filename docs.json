@@ -13,7 +13,7 @@
           {
             "group": "Começar",
             "pages": [
-              "start/index",
+              "index",
               "start/adicionar",
               "start/configuracao",
               "start/problemas"
@@ -123,5 +123,12 @@
             "label": "Dashboard",
             "href": "https://dashboard.mintlify.com"
         }
-    }
+    },
+    "redirects": [
+      {
+        "source": "/start/index",
+        "destination": "/",
+        "permanent": true
+      }
+    ]
 }
