@@ -1,10 +1,44 @@
 ---
-title: "Automessage"
-description: "Permite o envio de mensagens automáticas com base em opções personalizadas."
-mode: "wide"
+title: "Programar mensagens automáticas"
+sidebarTitle: "/automessage"
+description: "Programar mensagens automáticas no Discord com o The Reaper. Veja quando usar, quais opções configurar e como conferir o resultado sem conhecimentos técnicos."
+icon: "terminal"
 ---
 
-Para usá-lo, digite **/automessage**.
+Com **/automessage**, você pode programar mensagens automáticas. Use para enviar mensagens em intervalos configurados.
+
+<Info>
+  **Permissão para executar:** Administrador (referência inicial; a exigência específica poderá ser ajustada).
+</Info>
+
+## Como usar
+
+<Steps>
+  <Step title="Abra o comando no Discord">
+    Digite `/automessage` no campo de mensagens e selecione o comando do The Reaper.
+  </Step>
+  <Step title="Escolha as opções">
+    Preencha os campos mostrados no Discord. Os nomes e as funções disponíveis estão explicados abaixo.
+  </Step>
+  <Step title="Confirme a configuração">
+    Revise suas escolhas, envie o comando e confira a resposta do bot.
+  </Step>
+</Steps>
+
+## Parâmetros principais
+
+| Campo | Significado |
+| --- | --- |
+| `Canal` | Identifique um canal para sua mensagem automática ser enviada. |
+| `Tempo` | Defina um intervalo de tempo como por exemplo 10m para 10 minutos. |
+| `Mensagem` | Defina a mensagem que deverá ser enviada. |
+| `Cronjob` | Defina um intervalo de tempo com um cronjob. (É usado o horário America/Sao_Paulo) |
+
+<Warning>
+  O cronjob avançado usa o fuso America/Sao_Paulo, de acordo com a configuração documentada.
+</Warning>
+
+## Funções disponíveis
 
 O mesmo irá ter 4 grupos:
 
@@ -15,29 +49,14 @@ O mesmo irá ter 4 grupos:
     - `Canal`: Identifique um canal para sua mensagem automática ser enviada.
     - `Tempo`: Defina um intervalo de tempo como por exemplo 10m para 10 minutos.
     - `Mensagem`: Defina a mensagem que deverá ser enviada.
-
-    <img
-      src="https://i.imgur.com/cr02vwz.png"
-      className="mx-auto"
-    />
   </Tab>
   <Tab title="Remover">
     Use essa opção para remover um novo canal de notícias ao bot e assim ele para de publicar novas mensagens.
 
     - `Mensagem`: Defina a mensagem que deverá ser removida.
-
-    <img
-      src="https://i.imgur.com/TIrQOaZ.png"
-      className="mx-auto"
-    />
   </Tab>
   <Tab title="Lista">
     Esta irá listar todos os canais definidos até ao momento ativos no servidor.
-
-    <img
-      src="https://i.imgur.com/aJD4oEp.png"
-      className="mx-auto"
-    />
   </Tab>
   <Tab title="[Avançado] - Cronjob">
     Este comando permite inserir cronjobs, estes poderão fazer agendamentos totalmente personalizados com base em tempo e expressões. É importante analisar o seu Cronjob no [CronTab Guru](https://crontab.guru).
@@ -45,12 +64,9 @@ O mesmo irá ter 4 grupos:
     - `Canal`: Identifique um canal para sua mensagem automática ser enviada.
     - `Cronjob`: Defina um intervalo de tempo com um cronjob. (É usado o horário America/Sao_Paulo)
     - `Mensagem`: Defina a mensagem que deverá ser enviada.
-
-    <img
-      src="/images/download.png"
-      alt="image.png"
-      title="image.png"
-      className="mx-auto"
-    />
   </Tab>
 </Tabs>
+
+## Saiba mais
+
+[Veja o guia relacionado](/commands/welcome) ou procure ajuda no [servidor de suporte](https://discord.gg/TnvvwUStHK).

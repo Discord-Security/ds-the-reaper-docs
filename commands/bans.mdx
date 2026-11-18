@@ -1,11 +1,42 @@
 ---
-title: "Bans"
-description: "Faz uma pesquisa ou procura o máximo de detalhes sobre os banimentos."
-mode: "wide"
-sidebarTitle: "Bans"
+title: "Consultar banimentos"
+sidebarTitle: "/bans"
+description: "Consultar banimentos com o The Reaper no Discord. Saiba como encontrar as opções, preencher os campos e confirmar o resultado."
+icon: "terminal"
 ---
 
-Para usá-lo, digite **/bans**.
+O comando **/bans** permite consultar banimentos. Use para procurar banimentos, consultar detalhes e exportar a lista.
+
+<Info>
+  **Permissão para executar:** Administrador (referência inicial; a exigência específica poderá ser ajustada).
+</Info>
+
+## Passo a passo
+
+<Steps>
+  <Step title="Encontre o comando">
+    Digite `/bans` no Discord e selecione o comando do The Reaper.
+  </Step>
+  <Step title="Preencha as opções">
+    Escolha os campos apresentados no Discord, conforme as funções descritas abaixo.
+  </Step>
+  <Step title="Confirme e confira">
+    Envie o comando e confira a resposta do bot.
+  </Step>
+</Steps>
+
+## Parâmetros
+
+| Campo | Significado |
+| --- | --- |
+| `ID` | Identifique o ID do usuário banido. |
+| `Motivo` | Coloque como parâmetro de busca o motivo dado. |
+
+<Warning>
+  Confira o ID ou o motivo antes de pesquisar.
+</Warning>
+
+## Opções do comando
 
 O mesmo irá ter 3 grupos:
 
@@ -14,28 +45,17 @@ O mesmo irá ter 3 grupos:
     Informações de um banimento, informando assim o usuário, id e motivo.
 
     - `ID`: Identifique o ID do usuário banido.
-
-    <img
-      src="https://i.imgur.com/nERFoI9.png"
-      className="mx-auto"
-    />
   </Tab>
   <Tab title="Pesquisar">
     Informações de vários banimentos, dizendo ID, tag e motivo destacando a palavra-chave.
 
     - `Motivo`: Coloque como parâmetro de busca o motivo dado.
-
-    <img
-      src="https://i.imgur.com/dCWbZU4.png"
-      className="mx-auto"
-    />
   </Tab>
   <Tab title="Exportar">
     Exporte uma lista em txt com todos os banimentos do seu servidor.
-
-    <img
-      src="https://i.imgur.com/XxSmAa2.png"
-      className="mx-auto"
-    />
   </Tab>
 </Tabs>
+
+## Saiba mais
+
+[Leia o guia relacionado](/commands/ban) ou entre no [servidor de suporte](https://discord.gg/TnvvwUStHK).

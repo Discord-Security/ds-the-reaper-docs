@@ -1,16 +1,49 @@
 ---
-title: "Antifake"
-description: "Remove contas falsas com base no tempo de conta."
-mode: "wide"
+title: "Proteger contra contas recentes"
+sidebarTitle: "/antifake"
+description: "Proteger contra contas recentes no Discord com o The Reaper. Veja quando usar, quais opções configurar e como conferir o resultado sem conhecimentos técnicos."
+icon: "terminal"
 ---
 
-Para usá-lo, digite **/antifake**.
+Com **/antifake**, você pode proteger contra contas recentes. Use para reduzir a entrada de contas criadas há pouco tempo.
+
+<Info>
+  **Permissão para executar:** Administrador (referência inicial; a exigência específica poderá ser ajustada).
+</Info>
+
+## Como usar
+
+<Steps>
+  <Step title="Abra o comando no Discord">
+    Digite `/antifake` no campo de mensagens e selecione o comando do The Reaper.
+  </Step>
+  <Step title="Escolha as opções">
+    Preencha os campos mostrados no Discord. Os nomes e as funções disponíveis estão explicados abaixo.
+  </Step>
+  <Step title="Confirme a configuração">
+    Revise suas escolhas, envie o comando e confira a resposta do bot.
+  </Step>
+</Steps>
+
+## Parâmetros principais
+
+| Campo | Significado |
+| --- | --- |
+| `Ação` | Alterne entre banir usuários ou expulsar eles através do antifake. |
+| `Tempo` | Defina um intervalo de tempo limite como, por exemplo, 3h para 3 horas. |
+| `Canal` | Identifique um canal para seu relatório ser enviado. |
+
+<Warning>
+  Configure o limite de idade da conta, a punição e o canal de relatórios antes de ativar.
+</Warning>
+
+## Funções disponíveis
 
 O mesmo irá ter 4 grupos:
 
 <Tabs>
   <Tab title="Punição">
-    Use essa opção para alternar entre punir usuários no anti-fake com banimentos ou expulsões
+    Use essa opção para alternar entre punir usuários com este sistema com banimentos ou expulsões
 
     - `Ação`: Alterne entre banir usuários ou expulsar eles através do antifake.
 
@@ -36,3 +69,7 @@ O mesmo irá ter 4 grupos:
     ![](https://i.imgur.com/zVJQ9MC.png)
   </Tab>
 </Tabs>
+
+## Saiba mais
+
+[Veja o guia relacionado](/start/configuracao) ou procure ajuda no [servidor de suporte](https://discord.gg/TnvvwUStHK).

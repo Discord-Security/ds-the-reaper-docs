@@ -1,16 +1,49 @@
 ---
-title: "Antiflood"
-description: "Detecta flood massivo e age contra de acordo com as preferências do servidor."
-mode: "wide"
+title: "Configurar proteção contra flood"
+sidebarTitle: "/antiflood"
+description: "Configurar proteção contra flood no Discord com o The Reaper. Veja quando usar, quais opções configurar e como conferir o resultado sem conhecimentos técnicos."
+icon: "terminal"
 ---
 
-Para usá-lo, digite **/antiflood**.
+Com **/antiflood**, você pode configurar proteção contra flood. Use para agir contra envios massivos de mensagens.
+
+<Info>
+  **Permissão para executar:** Administrador (referência inicial; a exigência específica poderá ser ajustada).
+</Info>
+
+## Como usar
+
+<Steps>
+  <Step title="Abra o comando no Discord">
+    Digite `/antiflood` no campo de mensagens e selecione o comando do The Reaper.
+  </Step>
+  <Step title="Escolha as opções">
+    Preencha os campos mostrados no Discord. Os nomes e as funções disponíveis estão explicados abaixo.
+  </Step>
+  <Step title="Confirme a configuração">
+    Revise suas escolhas, envie o comando e confira a resposta do bot.
+  </Step>
+</Steps>
+
+## Parâmetros principais
+
+| Campo | Significado |
+| --- | --- |
+| `Ação` | Alterne entre banir usuários, expulsar ou castigar através do antiflood. |
+| `Tempo` | Decida quanto tempo a pessoa deve ficar de castigo (10m, 2h, 1d). |
+| `Canal` | Identifique um canal para seu relatório ser enviado. |
+
+<Warning>
+  Defina a punição e, se aplicável, sua duração antes de ativar.
+</Warning>
+
+## Funções disponíveis
 
 O mesmo irá ter 3 grupos:
 
 <Tabs>
   <Tab title="Punição">
-    Use essa opção para alternar entre punir usuários no anti-fake com banimentos, expulsões ou castigos.
+    Use essa opção para alternar entre punir usuários com este sistema com banimentos, expulsões ou castigos.
 
     - `Ação`: Alterne entre banir usuários, expulsar ou castigar através do antiflood.
     - `Tempo`: Decida quanto tempo a pessoa deve ficar de castigo (10m, 2h, 1d).
@@ -30,3 +63,7 @@ O mesmo irá ter 3 grupos:
     ![](/images/swappy-20261118_184614.png)
   </Tab>
 </Tabs>
+
+## Saiba mais
+
+[Veja o guia relacionado](/commands/antispam) ou procure ajuda no [servidor de suporte](https://discord.gg/TnvvwUStHK).
