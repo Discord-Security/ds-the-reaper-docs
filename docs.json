@@ -49,6 +49,8 @@
                         "icon": "bolt",
                         "pages": [
                             "commands/antifake",
+                            "commands/antiflood",
+                            "commands/antispam",
       "commands/automessage",
       "commands/autopublish",
       "commands/backup",
@@ -57,6 +59,7 @@
       "commands/partners_warn",
       "commands/pause_invites",
       "commands/reset",
+      "commands/reverter-raid",
       "commands/welcome",
       "commands/exit"
                         ]
