@@ -1,23 +1,79 @@
 ---
-title: "Delete Channels"
-description: "Apaga os canais de uma categoria."
-mode: "wide"
+title: "Apagar canais de uma categoria com /delete_channels"
+sidebarTitle: "Delete channels"
+description: "Use o /delete_channels para apagar de uma vez todos os canais de uma categoria do seu servidor. O comando só lista categorias para escolher."
+icon: "trash"
 ---
 
-Para usá-lo, digite **/delete_channels**.
+O comando **/delete_channels** apaga de uma vez todos os canais de uma categoria do seu servidor. Ele só pede categorias, então a lista de opções já vem filtrada.
 
-<img
-  src="https://i.imgur.com/fWKIXXR.png"
-  className="mx-auto"
-/>
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
 
-O mesmo irá solicitar 1 parâmetro:
+<Warning>
+  Este comando apaga os canais da categoria escolhida. Confira a categoria antes de enviar.
+</Warning>
 
-- `Categoria`: Este solicitará somente categorias, já filtrando as opções possíveis só para categorias.
+## Como usar
+
+Clique em **Próximo** para ver o comando sendo preenchido, como acontece no Discord.
+
+<CommandDemo />
+
+## O que colocar em cada campo
+
+| Campo | O que colocar |
+| --- | --- |
+| `Categoria` | A categoria cujos canais serão apagados. O Discord mostra somente categorias para você escolher. |
 
 ## Exemplo
 
-<img
-  src="https://i.imgur.com/7GpnGOx.png"
-  className="mx-auto"
-/>
+<Frame caption="Resultado do comando /delete_channels no Discord.">
+  <img
+    src="https://i.imgur.com/7GpnGOx.png"
+    alt="Exemplo de canais apagados com o comando /delete_channels no Discord"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Clear" icon="broom" href="/commands/clear">
+    Apague mensagens do chat.
+  </Card>
+
+  <Card title="Backup" icon="cloud-arrow-up" href="/commands/backup">
+    Faça uma cópia de segurança completa do servidor.
+  </Card>
+</Columns>
+
+export const CommandDemo = () => {
+  const command = "/delete_channels";
+  const fields = [
+    { name: "Categoria", value: "#categoria", hint: "escolha a categoria cujos canais serão apagados." },
+  ];
+  const [step, setStep] = useState(0);
+  const done = step === fields.length;
+  const btn = { padding: "6px 12px", borderRadius: 6, border: "1px solid rgba(127,127,127,.35)", background: "transparent", color: "inherit", font: "inherit", cursor: "pointer" };
+  return (
+    <div className="not-prose" style={{ border: "1px solid rgba(127,127,127,.25)", borderRadius: 12, padding: 16 }}>
+      <div style={{ background: "#383a40", color: "#dbdee1", borderRadius: 8, padding: "10px 12px", display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center", fontSize: 15 }}>
+        <span style={{ background: "#5865f2", color: "#fff", borderRadius: 4, padding: "1px 8px", fontWeight: 600 }}>{command}</span>
+        {fields.slice(0, step).map((f) => (
+          <span key={f.name} style={{ background: "#2b2d31", borderRadius: 4, padding: "1px 8px" }}>
+            <span style={{ opacity: 0.6 }}>{f.name}: </span>{f.value}
+          </span>
+        ))}
+        {!done && <span style={{ opacity: 0.5 }}>{fields[step].name}</span>}
+      </div>
+      <p style={{ margin: "12px 0", fontSize: 14 }}>
+        {done ? "Tudo preenchido. Pressione Enter para enviar o comando." : (step === 0 ? "Digite " + command + " no chat e escolha o comando na lista do Discord. " : "") + "Próximo campo, " + fields[step].name + ": " + fields[step].hint}
+      </p>
+      <div style={{ display: "flex", gap: 8 }}>
+        <button type="button" style={btn} disabled={step === 0} onClick={() => setStep(step - 1)}>Voltar</button>
+        <button type="button" style={btn} disabled={done} onClick={() => setStep(step + 1)}>Próximo</button>
+      </div>
+    </div>
+  );
+};

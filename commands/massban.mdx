@@ -1,28 +1,101 @@
 ---
-title: "Massban"
-description: "Este deixa realizar vários banimentos ao mesmo tempo, útil para grandes hordas de raids"
-mode: "wide"
+title: "Banir vários usuários de uma vez com /massban"
+sidebarTitle: "Massban"
+description: "Use o /massban para banir vários usuários de uma só vez pelos IDs, ideal para conter raids. Exige gravidade, senha e, opcionalmente, um motivo."
+icon: "users"
 ---
 
-Para usar, digite **/massban**.
+O comando **/massban** bane vários usuários ao mesmo tempo, o que é útil para conter grandes hordas de raids. Em vez de banir um por um com o [/ban](/commands/ban), você informa todos os IDs de uma vez.
 
-![](https://i.imgur.com/3PPmds7.png)
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
 
-- `IDs`: Este deverás pegar os IDs de vários usuários.
+## Como usar
+
+Clique em **Próximo** para ver o comando sendo preenchido, campo por campo, como acontece no Discord.
+
+<CommandDemo />
+
+## O que colocar em cada campo
+
+| Campo | O que colocar |
+| --- | --- |
+| `IDs` | Os IDs dos usuários que você quer banir. |
+| `Gravidade` | Escolha **1** ou **2**, dependendo do que os usuários fizeram. É igual ao [/ban](/commands/ban). |
+| `Senha` | Uma senha que deve ser pedida ao desenvolvedor do bot. Se você é o dono do servidor, peça diretamente. Se você é administrador ou sub-dono, o dono do servidor decide se a senha será compartilhada com você. |
+| `Motivo` | Opcional. Explique por que os usuários estão sendo banidos. |
 
 <Tip>
-  Se precisares de ajuda sobre como pegar IDs de usuários, clica [aqui](/tutorial/devsettings).
+  Não sabe como copiar o ID de um usuário? Siga o guia [Como pegar IDs no Discord](/tutorial/devsettings).
 </Tip>
-
-- `Gravidade`: Deverá ser escolhida de 1 a 2 dependendo do que o usuário fez, igual ao do ban.
 
 <Tip>
-  Se precisares de ajuda sobre as gravidades de banimento, clica [aqui](/owners/gravidades).
+  Não sabe qual gravidade escolher? Veja [Gravidades de banimento](/owners/gravidades).
 </Tip>
 
-- `Senha`: Esta é uma senha que deverá ser perguntada ao desenvolvedor do Bot, sobre ela, caso você seja dono de servidor. Caso você seja um administrador ou sub-dono, o dono do servidor terá que ver se a chave deverá ser partilhada consigo.
-- `Motivo`: É um campo opcional, onde se pode informar o motivo do banimento dos usuários.
+<Note>
+  Precisa de ajuda com a senha? Fale com a equipe no [servidor de suporte](https://discord.gg/TnvvwUStHK).
+</Note>
 
 ## Exemplo
 
-![](https://i.imgur.com/sYQrxiw.png)
+<Frame caption="Resultado do comando /massban no Discord.">
+  <img
+    src="https://i.imgur.com/sYQrxiw.png"
+    alt="Exemplo de banimento em massa feito com o comando /massban no Discord"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Ban" icon="gavel" href="/commands/ban">
+    Bana um usuário por vez.
+  </Card>
+
+  <Card title="Unban" icon="user-check" href="/commands/unban">
+    Desfaça um banimento.
+  </Card>
+
+  <Card title="Lockdown" icon="shield-halved" href="/commands/lockdown">
+    Feche os chats do servidor durante uma raid.
+  </Card>
+
+  <Card title="Reverter raid" icon="clock-rotate-left" href="/commands/reverter-raid">
+    Volte 24 horas no tempo após uma raid.
+  </Card>
+</Columns>
+
+export const CommandDemo = () => {
+  const command = "/massban";
+  const fields = [
+    { name: "IDs", value: "IDs dos usuários", hint: "cole os IDs dos usuários que serão banidos." },
+    { name: "Gravidade", value: "2", hint: "escolha 1 ou 2." },
+    { name: "Senha", value: "sua senha", hint: "informe a senha pedida ao desenvolvedor do bot." },
+    { name: "Motivo", value: "motivo", hint: "campo opcional, explique o motivo do banimento." },
+  ];
+  const [step, setStep] = useState(0);
+  const done = step === fields.length;
+  const btn = { padding: "6px 12px", borderRadius: 6, border: "1px solid rgba(127,127,127,.35)", background: "transparent", color: "inherit", font: "inherit", cursor: "pointer" };
+  return (
+    <div className="not-prose" style={{ border: "1px solid rgba(127,127,127,.25)", borderRadius: 12, padding: 16 }}>
+      <div style={{ background: "#383a40", color: "#dbdee1", borderRadius: 8, padding: "10px 12px", display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center", fontSize: 15 }}>
+        <span style={{ background: "#5865f2", color: "#fff", borderRadius: 4, padding: "1px 8px", fontWeight: 600 }}>{command}</span>
+        {fields.slice(0, step).map((f) => (
+          <span key={f.name} style={{ background: "#2b2d31", borderRadius: 4, padding: "1px 8px" }}>
+            <span style={{ opacity: 0.6 }}>{f.name}: </span>{f.value}
+          </span>
+        ))}
+        {!done && <span style={{ opacity: 0.5 }}>{fields[step].name}</span>}
+      </div>
+      <p style={{ margin: "12px 0", fontSize: 14 }}>
+        {done ? "Tudo preenchido. Pressione Enter para enviar o comando." : (step === 0 ? "Digite " + command + " no chat e escolha o comando na lista do Discord. " : "") + "Próximo campo, " + fields[step].name + ": " + fields[step].hint}
+      </p>
+      <div style={{ display: "flex", gap: 8 }}>
+        <button type="button" style={btn} disabled={step === 0} onClick={() => setStep(step - 1)}>Voltar</button>
+        <button type="button" style={btn} disabled={done} onClick={() => setStep(step + 1)}>Próximo</button>
+      </div>
+    </div>
+  );
+};

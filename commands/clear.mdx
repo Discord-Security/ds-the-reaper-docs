@@ -1,16 +1,77 @@
 ---
-title: "Clear"
-description: "Limpa uma quantidade de mensagens do seu chat (opcionalmente, por membro)."
-mode: "wide"
+title: "Apagar mensagens do chat com o comando /clear"
+sidebarTitle: "Clear"
+description: "Use o /clear para apagar de 2 a 100 mensagens do chat por vez, com a opção de filtrar a limpeza para as mensagens de um único membro."
+icon: "broom"
 ---
 
-Para usá-lo, digite **/clear**.
+O comando **/clear** apaga uma quantidade de mensagens do chat onde você o usa. Você pode apagar de 2 a 100 mensagens por vez e, se quiser, filtrar a limpeza para as mensagens de um único membro.
 
-![](https://i.imgur.com/1qEG8j5.png)
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
 
-- `Número`: Este irá lhe solicitar a quantidade de mensagens que deve ser apagada de 2 a 100 mensagens por utilização do comando.
-- `Membro`: Filtrar a limpeza de mensagens por um só usuário.
+## Como usar
+
+Clique em **Próximo** para ver o comando sendo preenchido, campo por campo, como acontece no Discord.
+
+<CommandDemo />
+
+## O que colocar em cada campo
+
+| Campo | O que colocar |
+| --- | --- |
+| `Número` | A quantidade de mensagens que serão apagadas, de **2** a **100** por uso do comando. |
+| `Membro` | Opcional. Filtra a limpeza para apagar apenas as mensagens de um usuário. |
 
 ## Exemplo
 
-![](https://i.imgur.com/AxCFwq4.png)
+<Frame caption="Resultado do comando /clear no Discord.">
+  <img
+    src="https://i.imgur.com/AxCFwq4.png"
+    alt="Exemplo de mensagens apagadas com o comando /clear no Discord"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Delete channels" icon="trash" href="/commands/delete_channels">
+    Apague todos os canais de uma categoria.
+  </Card>
+
+  <Card title="Logs" icon="clipboard-list" href="/commands/logs">
+    Registre mensagens apagadas e editadas em um canal.
+  </Card>
+</Columns>
+
+export const CommandDemo = () => {
+  const command = "/clear";
+  const fields = [
+    { name: "Número", value: "50", hint: "informe quantas mensagens apagar, de 2 a 100." },
+    { name: "Membro", value: "@membro", hint: "campo opcional, limpa apenas as mensagens de um usuário." },
+  ];
+  const [step, setStep] = useState(0);
+  const done = step === fields.length;
+  const btn = { padding: "6px 12px", borderRadius: 6, border: "1px solid rgba(127,127,127,.35)", background: "transparent", color: "inherit", font: "inherit", cursor: "pointer" };
+  return (
+    <div className="not-prose" style={{ border: "1px solid rgba(127,127,127,.25)", borderRadius: 12, padding: 16 }}>
+      <div style={{ background: "#383a40", color: "#dbdee1", borderRadius: 8, padding: "10px 12px", display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center", fontSize: 15 }}>
+        <span style={{ background: "#5865f2", color: "#fff", borderRadius: 4, padding: "1px 8px", fontWeight: 600 }}>{command}</span>
+        {fields.slice(0, step).map((f) => (
+          <span key={f.name} style={{ background: "#2b2d31", borderRadius: 4, padding: "1px 8px" }}>
+            <span style={{ opacity: 0.6 }}>{f.name}: </span>{f.value}
+          </span>
+        ))}
+        {!done && <span style={{ opacity: 0.5 }}>{fields[step].name}</span>}
+      </div>
+      <p style={{ margin: "12px 0", fontSize: 14 }}>
+        {done ? "Tudo preenchido. Pressione Enter para enviar o comando." : (step === 0 ? "Digite " + command + " no chat e escolha o comando na lista do Discord. " : "") + "Próximo campo, " + fields[step].name + ": " + fields[step].hint}
+      </p>
+      <div style={{ display: "flex", gap: 8 }}>
+        <button type="button" style={btn} disabled={step === 0} onClick={() => setStep(step - 1)}>Voltar</button>
+        <button type="button" style={btn} disabled={done} onClick={() => setStep(step + 1)}>Próximo</button>
+      </div>
+    </div>
+  );
+};

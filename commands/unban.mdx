@@ -1,20 +1,81 @@
 ---
-title: "Unban"
-description: "Pode desbanir em todos os servidores da rede The Reaper ou só no seu servidor."
-mode: 'wide'
+title: "Desbanir um usuário com o comando /unban"
+sidebarTitle: "Unban"
+description: "Use o /unban para desbanir um usuário apenas no seu servidor ou em todos os servidores da rede The Reaper, escolhendo a gravidade do desbanimento."
+icon: "user-check"
 ---
 
-Para usá-lo, digite **/unban**.
+O comando **/unban** desfaz um banimento. Você escolhe a gravidade para decidir se o usuário é desbanido em todos os servidores da rede The Reaper ou só no seu servidor.
 
-![](https://i.imgur.com/sYgebbT.png)
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
 
-- `Usuário`: Este basta o mencioná-lo no servidor ou usar o ID de usuário.
-- `Gravidade`: Deverá ser escolhida de 1 a 2 dependendo do que o usuário fez.
+## Como usar
+
+Clique em **Próximo** para ver o comando sendo preenchido, campo por campo, como acontece no Discord.
+
+<CommandDemo />
+
+## O que colocar em cada campo
+
+| Campo | O que colocar |
+| --- | --- |
+| `Usuário` | Mencione o usuário no servidor ou use o ID dele. |
+| `Gravidade` | Escolha **1** ou **2**, dependendo do que o usuário fez. |
 
 <Tip>
-  Se precisares de ajuda sobre as gravidades de banimento, clica [aqui](/owners/gravidades).
+  Não sabe qual gravidade escolher? Veja [Gravidades de banimento](/owners/gravidades).
 </Tip>
 
 ## Exemplo
 
-![](https://i.imgur.com/JDZw1MG.png)
+<Frame caption="Resultado do comando /unban no Discord.">
+  <img
+    src="https://i.imgur.com/JDZw1MG.png"
+    alt="Exemplo de um desbanimento feito com o comando /unban no Discord"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Ban" icon="gavel" href="/commands/ban">
+    Bana um usuário do servidor.
+  </Card>
+
+  <Card title="Bans" icon="list" href="/commands/bans">
+    Consulte os banimentos do servidor.
+  </Card>
+</Columns>
+
+export const CommandDemo = () => {
+  const command = "/unban";
+  const fields = [
+    { name: "Usuário", value: "@usuário", hint: "mencione o usuário ou cole o ID dele." },
+    { name: "Gravidade", value: "2", hint: "escolha 1 ou 2." },
+  ];
+  const [step, setStep] = useState(0);
+  const done = step === fields.length;
+  const btn = { padding: "6px 12px", borderRadius: 6, border: "1px solid rgba(127,127,127,.35)", background: "transparent", color: "inherit", font: "inherit", cursor: "pointer" };
+  return (
+    <div className="not-prose" style={{ border: "1px solid rgba(127,127,127,.25)", borderRadius: 12, padding: 16 }}>
+      <div style={{ background: "#383a40", color: "#dbdee1", borderRadius: 8, padding: "10px 12px", display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center", fontSize: 15 }}>
+        <span style={{ background: "#5865f2", color: "#fff", borderRadius: 4, padding: "1px 8px", fontWeight: 600 }}>{command}</span>
+        {fields.slice(0, step).map((f) => (
+          <span key={f.name} style={{ background: "#2b2d31", borderRadius: 4, padding: "1px 8px" }}>
+            <span style={{ opacity: 0.6 }}>{f.name}: </span>{f.value}
+          </span>
+        ))}
+        {!done && <span style={{ opacity: 0.5 }}>{fields[step].name}</span>}
+      </div>
+      <p style={{ margin: "12px 0", fontSize: 14 }}>
+        {done ? "Tudo preenchido. Pressione Enter para enviar o comando." : (step === 0 ? "Digite " + command + " no chat e escolha o comando na lista do Discord. " : "") + "Próximo campo, " + fields[step].name + ": " + fields[step].hint}
+      </p>
+      <div style={{ display: "flex", gap: 8 }}>
+        <button type="button" style={btn} disabled={step === 0} onClick={() => setStep(step - 1)}>Voltar</button>
+        <button type="button" style={btn} disabled={done} onClick={() => setStep(step + 1)}>Próximo</button>
+      </div>
+    </div>
+  );
+};

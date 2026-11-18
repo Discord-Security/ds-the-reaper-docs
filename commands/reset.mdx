@@ -1,14 +1,41 @@
 ---
-title: "Reset"
-description: "Retire todos os dados do seu servidor no nosso banco de dados."
-mode: "wide"
+title: "Apagar os dados do servidor com o comando /reset"
+sidebarTitle: "Reset"
+description: "Use o /reset para retirar do banco de dados do The Reaper todos os dados do seu servidor. Veja o que é apagado antes de usar o comando."
+icon: "rotate-left"
 ---
 
-Para usá-lo, digite **/reset**.
+O comando **/reset** retira do banco de dados do The Reaper todos os dados do seu servidor. Use quando quiser que o bot esqueça o que guardou sobre a sua comunidade.
+
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
+
+## Como usar
+
+Digite **/reset** no chat e escolha o comando na lista do Discord. Ele não tem campos para preencher.
+
+<Warning>
+  O comando apaga todos os dados do seu servidor no banco de dados do The Reaper. Para saber exatamente o que é guardado, veja [O que o The Reaper guarda sobre o seu servidor](/owners/dados).
+</Warning>
 
 ## Exemplo
 
-<img
-  src="https://i.imgur.com/onWnh90.png"
-  className="mx-auto"
-/>
+<Frame caption="Resultado do comando /reset no Discord.">
+  <img
+    src="https://i.imgur.com/onWnh90.png"
+    alt="Exemplo dos dados do servidor removidos com o comando /reset no Discord"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Dados guardados" icon="database" href="/owners/dados">
+    Veja o que o The Reaper guarda e como apagar.
+  </Card>
+
+  <Card title="Backup" icon="cloud-arrow-up" href="/commands/backup">
+    Faça uma cópia de segurança completa do servidor.
+  </Card>
+</Columns>
