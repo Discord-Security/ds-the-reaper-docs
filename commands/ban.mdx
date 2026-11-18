@@ -53,4 +53,25 @@ Depois de preencher os campos e executar o comando, confira a resposta do The Re
 
 ## Comandos e guias relacionados
 
-[Consulte este guia relacionado](/owners/gravidades). Se precisar de ajuda para executar o comando, entre no [servidor de suporte](https://discord.gg/TnvvwUStHK).
+[Entenda as gravidades](/owners/gravidades). Se precisar de ajuda, entre no [servidor de suporte](https://discord.gg/TnvvwUStHK).
+
+export const DiscordBanExample = () => {
+  const [step, setStep] = useState(0);
+  const stages = [
+    {label:"Comando",example:"/ban",help:"Digite o comando no Discord."},
+    {label:"Usuário",example:"/ban · Usuário: @membro",help:"Selecione o usuário que será banido."},
+    {label:"Gravidade",example:"/ban · Usuário: @membro · Gravidade: 1",help:"Revise o nível 1 ou 2 antes de enviar."}
+  ];
+  return <div className="not-prose rounded-xl border border-[#42454e] overflow-hidden my-5" style={{background:"#313338",color:"#f2f3f5"}}>
+    <div style={{background:"#2b2d31",padding:12,fontWeight:650}}>Discord · Demonstração</div>
+    <div style={{padding:16}}>
+      <div style={{background:"#383a40",borderRadius:8,padding:14}}>{stages[step].example}</div>
+      <p style={{fontSize:13,color:"#b5bac1",marginTop:12}}>{stages[step].help}</p>
+      <div style={{display:"flex",justifyContent:"space-between",gap:8,alignItems:"center"}}>
+        <button type="button" disabled={step===0} onClick={()=>setStep(Math.max(0,step-1))} style={{background:"#4e5058",padding:8,borderRadius:6}}>Anterior</button>
+        <span style={{fontSize:12}}>{stages[step].label}</span>
+        <button type="button" onClick={()=>setStep((step+1)%3)} style={{background:"#5865f2",padding:8,borderRadius:6}}>{step===2?"Recomeçar":"Próximo"}</button>
+      </div>
+    </div>
+  </div>;
+};
