@@ -1,44 +1,19 @@
 ---
-title: "Criar e restaurar backups"
+title: "Backup"
 sidebarTitle: "/backup"
-description: "Criar e restaurar backups no Discord com o The Reaper. Veja quando usar, quais opções configurar e como conferir o resultado sem conhecimentos técnicos."
+description: "Crie, restaure ou remova cópias de segurança do servidor."
 icon: "terminal"
 ---
 
-Com **/backup**, você pode criar e restaurar backups. Use para gerar uma cópia de segurança e recuperar a configuração do servidor.
+Crie, restaure ou remova cópias de segurança do servidor. Digite `/backup` e selecione a opção pretendida no Discord.
 
 <Info>
-  **Permissão para executar:** Administrador (referência inicial; a exigência específica poderá ser ajustada).
+  **Permissão necessária:** Administrador.
 </Info>
 
-## Como usar
+## Subcomandos
 
-<Steps>
-  <Step title="Abra o comando no Discord">
-    Digite `/backup` no campo de mensagens e selecione o comando do The Reaper.
-  </Step>
-  <Step title="Escolha as opções">
-    Preencha os campos mostrados no Discord. Os nomes e as funções disponíveis estão explicados abaixo.
-  </Step>
-  <Step title="Confirme a configuração">
-    Revise suas escolhas, envie o comando e confira a resposta do bot.
-  </Step>
-</Steps>
-
-## Parâmetros principais
-
-| Campo | Significado |
-| --- | --- |
-| `BackupID` | Identifique o ID do Backup gerado no **/backup criar**. |
-| `Senha` | Identifique a senha de Backups do servidor onde o backup será carregado. |
-
-<Warning>
-  Carregar um backup pode destruir a estrutura atual do servidor para recriá-la. Guarde o ID e a senha em segurança.
-</Warning>
-
-## Funções disponíveis
-
-O mesmo irá ter 4 grupos:
+Cada aba descreve uma operação independente. **Os campos indicados em uma aba pertencem somente a esse subcomando.**
 
 <Tabs>
   <Tab title="Criar">
@@ -74,7 +49,3 @@ O mesmo irá ter 4 grupos:
     ![](https://i.imgur.com/AqFe00W.png)
   </Tab>
 </Tabs>
-
-## Saiba mais
-
-[Veja o guia relacionado](/commands/reverter-raid) ou procure ajuda no [servidor de suporte](https://discord.gg/TnvvwUStHK).

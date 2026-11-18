@@ -1,77 +1,69 @@
 ---
-title: "Banir um membro"
+title: "Ban"
 sidebarTitle: "/ban"
-description: "Banir um membro. Use quando precisar remover um membro do servidor por infração às regras. Veja os campos e cuidados antes de executar a ação."
-icon: "terminal"
+description: "Bane um usuário do servidor ou da rede The Reaper. Entenda a gravidade e os parâmetros antes de executar."
+icon: "gavel"
 ---
 
-O comando **/ban** do The Reaper permite banir um membro. Use quando precisar remover um membro do servidor por infração às regras.
+O comando `/ban` bane um usuário do servidor ou da rede The Reaper, dependendo da gravidade selecionada.
 
 <Info>
-  **Permissão para quem executa:** Administrador, como referência inicial desta documentação. Algumas funções podem aceitar permissões mais restritas.
+  **Permissão necessária:** Administrador.
 </Info>
 
-## Como usar no Discord
+## Como preencher
 
 <Steps>
-  <Step title="Abra o comando">
-    Em um canal do servidor, digite `/ban` e selecione a opção do **The Reaper** no menu de comandos do Discord.
+  <Step title="Selecione o usuário">
+    Digite `/ban` e preencha **user** selecionando a menção do membro ou informando o ID.
   </Step>
-  <Step title="Preencha os campos">
-    O Discord apresenta os campos necessários. Confira os nomes e as orientações abaixo antes de confirmar.
+  <Step title="Escolha a gravidade">
+    Em **severity**, selecione `1` para um banimento local ou `2` para a punição conforme o protocolo da rede. [Entenda as gravidades](/owners/gravidades).
   </Step>
-  <Step title="Confira e execute">
-    Verifique os valores escolhidos e envie o comando. Observe a resposta do bot no Discord.
+  <Step title="Informe o motivo">
+    Em **reason**, descreva a infração. Confira os campos e envie o comando.
   </Step>
 </Steps>
 
-## Campos do comando
+## Parâmetros
 
-| Campo | Para que serve |
+| Campo no Discord | O que significa |
 | --- | --- |
-| `Usuário` | Este basta o mencioná-lo no servidor ou usar o ID de usuário. |
-| `Gravidade` | Deverá ser escolhida de 1 a 2 dependendo do que o usuário fez. |
+| `user` | Membro ou ID do usuário a banir. |
+| `severity` | Gravidade 1 ou 2, que define o alcance do banimento. |
+| `reason` | Motivo do banimento. |
 
-<Warning>
-  O banimento pode ser registrado com gravidade 1 ou 2. Veja o efeito de cada uma na página de gravidades.
-</Warning>
+## Exemplo no Discord
 
-## Resultado no Discord
+<DiscordBanPreview />
 
-Depois de preencher os campos e executar o comando, confira a resposta do The Reaper e verifique se a ação corresponde ao que você pretendia fazer.
-
-## Exemplo visual no Discord
-
-<DiscordBanExample />
-
-<Frame caption="Exemplo de resposta do bot preservado da documentação anterior">
+<Frame caption="Exemplo de resposta do The Reaper após um banimento">
   <img
     src="https://i.imgur.com/9IkcsVz.png"
-    alt="Resultado de banimento apresentado pelo The Reaper"
+    alt="Resposta de um banimento realizado pelo The Reaper"
   />
 </Frame>
 
-## Comandos e guias relacionados
+<Warning>
+  Antes de selecionar a gravidade 2, confira o impacto do banimento na rede The Reaper.
+</Warning>
 
-[Entenda as gravidades](/owners/gravidades). Se precisar de ajuda, entre no [servidor de suporte](https://discord.gg/TnvvwUStHK).
-
-export const DiscordBanExample = () => {
-  const [step, setStep] = useState(0);
-  const stages = [
-    {label:"Comando",example:"/ban",help:"Digite o comando no Discord."},
-    {label:"Usuário",example:"/ban · Usuário: @membro",help:"Selecione o usuário que será banido."},
-    {label:"Gravidade",example:"/ban · Usuário: @membro · Gravidade: 1",help:"Revise o nível 1 ou 2 antes de enviar."}
-  ];
-  return <div className="not-prose rounded-xl border border-[#42454e] overflow-hidden my-5" style={{background:"#313338",color:"#f2f3f5"}}>
-    <div style={{background:"#2b2d31",padding:12,fontWeight:650}}>Discord · Demonstração</div>
-    <div style={{padding:16}}>
-      <div style={{background:"#383a40",borderRadius:8,padding:14}}>{stages[step].example}</div>
-      <p style={{fontSize:13,color:"#b5bac1",marginTop:12}}>{stages[step].help}</p>
-      <div style={{display:"flex",justifyContent:"space-between",gap:8,alignItems:"center"}}>
-        <button type="button" disabled={step===0} onClick={()=>setStep(Math.max(0,step-1))} style={{background:"#4e5058",padding:8,borderRadius:6}}>Anterior</button>
-        <span style={{fontSize:12}}>{stages[step].label}</span>
-        <button type="button" onClick={()=>setStep((step+1)%3)} style={{background:"#5865f2",padding:8,borderRadius:6}}>{step===2?"Recomeçar":"Próximo"}</button>
-      </div>
+export const DiscordBanPreview = () => {
+  return <div className="not-prose overflow-hidden rounded-lg border border-[#34363b] text-[#dbdee1]" style={{background:"#111214",fontFamily:"gg sans, Whitney, Arial, sans-serif"}}>
+    <div className="flex items-center gap-2 border-b border-[#303136] px-4 py-3 text-[13px]">
+      <span className="text-[17px] font-semibold text-[#f2f3f5]">/ban</span>
+      <span className="text-[#949ba4]">Bane um usuário do servidor ou da network.</span>
+      <span className="ml-auto text-[#949ba4]">✕</span>
+    </div>
+    <div className="flex flex-wrap items-center gap-2 px-4 py-4 text-[14px]">
+      <span className="mr-2 flex h-7 w-7 items-center justify-center rounded-full border border-[#43b581] bg-[#25453e] text-[15px]">🛡</span>
+      <span className="font-bold text-[#f2f3f5]">/ban</span>
+      <span className="rounded-l bg-[#202127] px-2 py-1 text-[#e5e7eb]">user</span>
+      <span className="rounded-r bg-[#393949] px-2 py-1 font-medium text-[#93a9ff]">@Benjamin Cacciatori Ramos</span>
+      <span className="rounded-l bg-[#202127] px-2 py-1">severity</span>
+      <span className="rounded-r bg-[#383a40] px-2 py-1">2</span>
+      <span className="rounded-l bg-[#202127] px-2 py-1">reason</span>
+      <span className="rounded-r bg-[#383a40] px-2 py-1">[regras gerais] Desrespeitar as regras do servidor ou do grupo</span>
     </div>
   </div>;
 };

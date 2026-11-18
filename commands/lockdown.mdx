@@ -1,45 +1,38 @@
 ---
-title: "Bloquear temporariamente as conversas"
+title: "Lockdown"
 sidebarTitle: "/lockdown"
-description: "Bloquear temporariamente as conversas. Use em situações de emergência, como ataques coordenados ao servidor. Veja os campos e cuidados antes de executar a ação."
+description: "Bloqueie temporariamente os canais de conversa durante uma emergência."
 icon: "terminal"
 ---
 
-O comando **/lockdown** do The Reaper permite bloquear temporariamente as conversas. Use em situações de emergência, como ataques coordenados ao servidor.
+Bloqueie temporariamente os canais de conversa durante uma emergência. Digite `/lockdown` no Discord e escolha a ação pretendida.
 
 <Info>
-  **Permissão para quem executa:** Administrador, como referência inicial desta documentação. Algumas funções podem aceitar permissões mais restritas.
+  **Permissão necessária:** Administrador.
 </Info>
 
-## Como usar no Discord
+## Subcomandos
 
-<Steps>
-  <Step title="Abra o comando">
-    Em um canal do servidor, digite `/lockdown` e selecione a opção do **The Reaper** no menu de comandos do Discord.
-  </Step>
-  <Step title="Preencha os campos">
-    O Discord apresenta os campos necessários. Confira os nomes e as orientações abaixo antes de confirmar.
-  </Step>
-  <Step title="Confira e execute">
-    Verifique os valores escolhidos e envie o comando. Observe a resposta do bot no Discord.
-  </Step>
-</Steps>
+Cada aba corresponde a uma função independente. Os parâmetros mostrados numa aba não são obrigatórios nas demais.
 
-## Campos do comando
+<Tabs>
+  <Tab title="Ativar">
+    Ative o sistema e seu servidor automaticamente será totalmente fechado para membros digitarem, apenas poderão visualizar os chats e se possível com o aviso que você colocou.
 
-| Campo | Para que serve |
-| --- | --- |
-| `Motivo` | Envie um motivo e o bot irá gerar uma embed em todos os canais bloqueados avisando o porquê do servidor estar bloqueado. |
-| `Tempo` | Informe o tempo que o servidor deve permanecer bloqueado, por exemplo, 7h 45m. |
+    - `Motivo`: Envie um motivo e o bot irá gerar uma embed em todos os canais bloqueados avisando o porquê do servidor estar bloqueado.
+    - `Tempo`: Informe o tempo que o servidor deve permanecer bloqueado, por exemplo, 7h 45m.
 
-<Warning>
-  É possível informar o motivo e a duração do bloqueio.
-</Warning>
+    <img
+      src="https://i.imgur.com/kyNiKcR.png"
+      className="mx-auto"
+    />
+  </Tab>
+  <Tab title="Desativar">
+    Desative o sistema após estar tudo resolvido e seu servidor voltará ao que era antes.
 
-## Resultado no Discord
-
-Depois de preencher os campos e executar o comando, confira a resposta do The Reaper e verifique se a ação corresponde ao que você pretendia fazer.
-
-## Comandos e guias relacionados
-
-[Consulte este guia relacionado](/commands/lock). Se precisar de ajuda para executar o comando, entre no [servidor de suporte](https://discord.gg/TnvvwUStHK).
+    <img
+      src="https://i.imgur.com/VXntfx4.png"
+      className="mx-auto"
+    />
+  </Tab>
+</Tabs>
