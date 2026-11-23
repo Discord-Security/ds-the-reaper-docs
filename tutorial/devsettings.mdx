@@ -1,25 +1,75 @@
 ---
-title: "Obtendo IDs de usuários"
-description: "Para caso não saiba como obter um ID de usuário na plataforma Discord, siga os seguintes passos."
-mode: "wide"
+title: "Como pegar IDs no Discord"
+sidebarTitle: "Como pegar IDs"
+description: "Aprenda a ativar o Modo Desenvolvedor do Discord e a copiar o ID de um usuário, necessário para comandos como /ban, /massban e /proof."
+icon: "id-card"
 ---
 
-![](https://i.imgur.com/mCPv1gN.png)
+O ID de um usuário é um número único que identifica a conta dele no Discord. Alguns comandos do The Reaper, como [/ban](/commands/ban), [/massban](/commands/massban) e [/proof](/commands/proof), aceitam esse número. Para copiá-lo, você precisa ativar o Modo Desenvolvedor do Discord.
+
+<Frame>
+  <img
+    src="https://i.imgur.com/mCPv1gN.png"
+    alt="Ilustração do tutorial para obter IDs de usuários no Discord"
+  />
+</Frame>
+
+## Passo a passo
 
 <Steps>
-  <Step title="Vá nas configurações de usuário" titleSize="h2">
-    
+  <Step title="Vá nas configurações de usuário">
+    Abra as configurações de usuário do Discord.
   </Step>
-  <Step title="Clique na aba 'Avançado' em 'Config. do aplicativo'" titleSize="h2">
-    ![](/images/config1.png)
+  <Step title="Abra a aba Avançado">
+    Em **Config. do aplicativo**, clique na aba **Avançado**.
+
+    <Frame>
+      <img
+        src="/images/config1.png"
+        alt="Aba Avançado em Config. do aplicativo nas configurações do Discord"
+      />
+    </Frame>
   </Step>
-  <Step title="Ative a opção 'Modo Desenvolvedor'" titleSize="h2">
-    ![](/images/config2.png)
+  <Step title="Ative o Modo Desenvolvedor">
+    Ative a opção **Modo Desenvolvedor**.
+
+    <Frame>
+      <img
+        src="/images/config2.png"
+        alt="Opção Modo Desenvolvedor ativada nas configurações do Discord"
+      />
+    </Frame>
   </Step>
-  <Step title="Clique direito num usuário e clique em 'Copiar ID'" titleSize="h2">
-    ![](/images/config3.png)
+  <Step title="Copie o ID do usuário">
+    Clique com o botão direito em um usuário e clique em **Copiar ID**.
+
+    <Frame>
+      <img
+        src="/images/config3.png"
+        alt="Opção Copiar ID no menu do usuário no Discord"
+      />
+    </Frame>
   </Step>
-  <Step title="Use Control+V" titleSize="h2">
-    ![](/images/config4.png)
+  <Step title="Cole o ID">
+    Use **Control+V** para colar o ID no campo do comando.
+
+    <Frame>
+      <img
+        src="/images/config4.png"
+        alt="ID de usuário colado no campo de um comando no Discord"
+      />
+    </Frame>
   </Step>
 </Steps>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Ban" icon="gavel" href="/commands/ban">
+    Bana um usuário pelo ID.
+  </Card>
+
+  <Card title="Proof" icon="file-circle-check" href="/commands/proof">
+    Envie provas de um caso ao servidor oficial.
+  </Card>
+</Columns>

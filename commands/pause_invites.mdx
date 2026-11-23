@@ -1,21 +1,75 @@
 ---
-title: 'Pausar Convites'
-description: 'Bloqueia o servidor de entrar pessoas enquanto a função Pausar Convites estiver ativada'
-mode: 'wide'
+title: "Pausar a entrada de novos membros com /pause_invites"
+sidebarTitle: "Pause invites"
+description: "Use o /pause_invites para impedir que novas pessoas entrem no servidor enquanto a pausa estiver ativada, e para remover a pausa quando quiser."
+icon: "pause"
 ---
 
-Para usá-lo, digite **/pause_invites**.
+O comando **/pause_invites** impede que novas pessoas entrem no servidor enquanto a pausa estiver ativada. Quando quiser liberar a entrada de novo, use o mesmo comando para remover a pausa.
 
-<img
-  src="https://i.imgur.com/Dc23MJZ.png"
-  className="mx-auto"
-/>
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
 
-- `Pausar`: Identifique se quer pausar ou remover a pausa.
+## Como usar
+
+Clique em **Próximo** para ver o comando sendo preenchido, como acontece no Discord.
+
+<CommandDemo />
+
+## O que colocar em cada campo
+
+| Campo | O que colocar |
+| --- | --- |
+| `Pausar` | Indique se você quer **pausar** os convites ou **remover a pausa**. |
 
 ## Exemplo
 
-<img
-  src="https://i.imgur.com/JLNn88r.png"
-  className="mx-auto"
-/>
+<Frame caption="Resultado do comando /pause_invites no Discord.">
+  <img
+    src="https://i.imgur.com/JLNn88r.png"
+    alt="Exemplo dos convites pausados com o comando /pause_invites no Discord"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Lockdown" icon="shield-halved" href="/commands/lockdown">
+    Feche todos os chats do servidor.
+  </Card>
+
+  <Card title="Antifake" icon="user-shield" href="/commands/antifake">
+    Proteja o servidor contra contas falsas.
+  </Card>
+</Columns>
+
+export const CommandDemo = () => {
+  const command = "/pause_invites";
+  const fields = [
+    { name: "Pausar", value: "pausar", hint: "escolha entre pausar os convites ou remover a pausa." },
+  ];
+  const [step, setStep] = useState(0);
+  const done = step === fields.length;
+  const btn = { padding: "6px 12px", borderRadius: 6, border: "1px solid rgba(127,127,127,.35)", background: "transparent", color: "inherit", font: "inherit", cursor: "pointer" };
+  return (
+    <div className="not-prose" style={{ border: "1px solid rgba(127,127,127,.25)", borderRadius: 12, padding: 16 }}>
+      <div style={{ background: "#383a40", color: "#dbdee1", borderRadius: 8, padding: "10px 12px", display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center", fontSize: 15 }}>
+        <span style={{ background: "#5865f2", color: "#fff", borderRadius: 4, padding: "1px 8px", fontWeight: 600 }}>{command}</span>
+        {fields.slice(0, step).map((f) => (
+          <span key={f.name} style={{ background: "#2b2d31", borderRadius: 4, padding: "1px 8px" }}>
+            <span style={{ opacity: 0.6 }}>{f.name}: </span>{f.value}
+          </span>
+        ))}
+        {!done && <span style={{ opacity: 0.5 }}>{fields[step].name}</span>}
+      </div>
+      <p style={{ margin: "12px 0", fontSize: 14 }}>
+        {done ? "Tudo preenchido. Pressione Enter para enviar o comando." : (step === 0 ? "Digite " + command + " no chat e escolha o comando na lista do Discord. " : "") + "Próximo campo, " + fields[step].name + ": " + fields[step].hint}
+      </p>
+      <div style={{ display: "flex", gap: 8 }}>
+        <button type="button" style={btn} disabled={step === 0} onClick={() => setStep(step - 1)}>Voltar</button>
+        <button type="button" style={btn} disabled={done} onClick={() => setStep(step + 1)}>Próximo</button>
+      </div>
+    </div>
+  );
+};

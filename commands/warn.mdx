@@ -1,22 +1,77 @@
 ---
-title: 'Warn'
-description: 'Alerta o usuário na DM, ou se bloqueada, no chat do servidor a avisar o motivo da advertência e essa é guardada dentro do userinfo.'
-mode: 'wide'
+title: "Advertir um usuário com o comando /warn"
+sidebarTitle: "Warn"
+description: "Use o /warn para advertir um usuário: ele recebe o aviso por DM, ou no chat do servidor se a DM estiver bloqueada, e a advertência fica no userinfo."
+icon: "triangle-exclamation"
 ---
 
-Para usá-lo, digite **/warn**.
+O comando **/warn** envia uma advertência a um usuário. O aviso chega na DM dele com o motivo e, se a DM estiver bloqueada, é enviado no chat do servidor. A advertência fica guardada dentro do [/userinfo](/commands/userinfo).
 
-<img
-  src="https://i.imgur.com/baEJrnE.png"
-  className="mx-auto"
-/>
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
 
-- `Usuário`: Este basta o mencioná-lo no servidor ou usar o ID de usuário.
-- `Motivo`: Diga o motivo pela advertência do usuário.
+## Como usar
+
+Clique em **Próximo** para ver o comando sendo preenchido, campo por campo, como acontece no Discord.
+
+<CommandDemo />
+
+## O que colocar em cada campo
+
+| Campo | O que colocar |
+| --- | --- |
+| `Usuário` | Mencione o usuário no servidor ou use o ID dele. |
+| `Motivo` | Diga o motivo da advertência. |
 
 ## Exemplo
 
-<img
-  src="https://i.imgur.com/N5VfEe2.png"
-  className="mx-auto"
-/>
+<Frame caption="Resultado do comando /warn no Discord.">
+  <img
+    src="https://i.imgur.com/N5VfEe2.png"
+    alt="Exemplo de uma advertência enviada com o comando /warn no Discord"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Userinfo" icon="user" href="/commands/userinfo">
+    Consulte as informações e advertências de um usuário.
+  </Card>
+
+  <Card title="Mute" icon="volume-xmark" href="/commands/mute">
+    Silencie um usuário por um tempo determinado.
+  </Card>
+</Columns>
+
+export const CommandDemo = () => {
+  const command = "/warn";
+  const fields = [
+    { name: "Usuário", value: "@usuário", hint: "mencione o usuário ou cole o ID dele." },
+    { name: "Motivo", value: "motivo", hint: "diga o motivo da advertência." },
+  ];
+  const [step, setStep] = useState(0);
+  const done = step === fields.length;
+  const btn = { padding: "6px 12px", borderRadius: 6, border: "1px solid rgba(127,127,127,.35)", background: "transparent", color: "inherit", font: "inherit", cursor: "pointer" };
+  return (
+    <div className="not-prose" style={{ border: "1px solid rgba(127,127,127,.25)", borderRadius: 12, padding: 16 }}>
+      <div style={{ background: "#383a40", color: "#dbdee1", borderRadius: 8, padding: "10px 12px", display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center", fontSize: 15 }}>
+        <span style={{ background: "#5865f2", color: "#fff", borderRadius: 4, padding: "1px 8px", fontWeight: 600 }}>{command}</span>
+        {fields.slice(0, step).map((f) => (
+          <span key={f.name} style={{ background: "#2b2d31", borderRadius: 4, padding: "1px 8px" }}>
+            <span style={{ opacity: 0.6 }}>{f.name}: </span>{f.value}
+          </span>
+        ))}
+        {!done && <span style={{ opacity: 0.5 }}>{fields[step].name}</span>}
+      </div>
+      <p style={{ margin: "12px 0", fontSize: 14 }}>
+        {done ? "Tudo preenchido. Pressione Enter para enviar o comando." : (step === 0 ? "Digite " + command + " no chat e escolha o comando na lista do Discord. " : "") + "Próximo campo, " + fields[step].name + ": " + fields[step].hint}
+      </p>
+      <div style={{ display: "flex", gap: 8 }}>
+        <button type="button" style={btn} disabled={step === 0} onClick={() => setStep(step - 1)}>Voltar</button>
+        <button type="button" style={btn} disabled={done} onClick={() => setStep(step + 1)}>Próximo</button>
+      </div>
+    </div>
+  );
+};

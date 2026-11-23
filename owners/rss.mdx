@@ -1,18 +1,64 @@
 ---
 title: "Variáveis do RSS Feed"
-description: "Descubra todas as variáveis do RSS Feed."
-mode: "wide"
+sidebarTitle: "Variáveis de RSS"
+description: "Veja todas as variáveis que você pode usar nas mensagens de notícias do RSS Feed do The Reaper, como %title, %url, %creator, %guid e %date."
+icon: "rss"
 ---
 
-<img
-  src="https://i.imgur.com/sxMibHA.png"
-  className="mx-auto"
-/>
+As variáveis do RSS Feed são códigos curtos, como `%title`, que você escreve na mensagem das notícias de um RSS Feed. Quando o The Reaper envia a notícia, cada código é trocado pela informação real, como o título, o link ou o autor.
 
-| Sintaxe  | Descrição                                 | Exemplo                                                                                     |
-| -------- | ----------------------------------------- | ------------------------------------------------------------------------------------------- |
-| %title   | Título da notícia                         | FIFA 23: ¿Merece la pena Kaku TOTS? \+ Solución del SBC                                     |
-| %url     | Link normal da notícia dentro do site     | https://areajugones.sport.es/videojuegos/fifa-23-merece-la-pena-kaku-tots-solucion-del-sbc/ |
-| %creator | Nome do autor da notícia ou autor do site | Manuel Esteban                                                                              |
-| %guid    | Link curto da notícia                     | https://areajugones.sport.es/?post_type=videojuegos&p=729514                                |
-| %date    | Data da notícia com hora                  | 21 de Dezembro de 2023 18:00                                                                |
+## Teste as variáveis
+
+Edite o texto abaixo para ver como a mensagem fica. A prévia usa os valores de exemplo da tabela.
+
+<VariablePreview />
+
+## Lista de variáveis
+
+| Sintaxe | O que mostra | Exemplo |
+| --- | --- | --- |
+| `%title` | O título da notícia | FIFA 23: ¿Merece la pena Kaku TOTS? + Solución del SBC |
+| `%url` | O link normal da notícia dentro do site | `https://areajugones.sport.es/videojuegos/fifa-23-merece-la-pena-kaku-tots-solucion-del-sbc/` |
+| `%creator` | O nome do autor da notícia ou do site | Manuel Esteban |
+| `%guid` | O link curto da notícia | `https://areajugones.sport.es/?post_type=videojuegos&p=729514` |
+| `%date` | A data da notícia, com hora | 21 de Dezembro de 2023 18:00 |
+
+<Frame caption="Exemplo de notícia de RSS Feed usando variáveis.">
+  <img
+    src="https://i.imgur.com/sxMibHA.png"
+    alt="Exemplo de notícia de RSS Feed usando variáveis"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Variáveis de boas-vindas e saída" icon="brackets-curly" href="/owners/welcome">
+    Veja as variáveis das mensagens de entrada e saída.
+  </Card>
+
+  <Card title="Variáveis de parcerias" icon="brackets-curly" href="/owners/partners">
+    Veja as variáveis do agradecimento de parceria.
+  </Card>
+</Columns>
+
+export const VariablePreview = () => {
+  const samples = {
+    "%creator": "Manuel Esteban",
+    "%title": "FIFA 23: ¿Merece la pena Kaku TOTS? + Solución del SBC",
+    "%date": "21 de Dezembro de 2023 18:00",
+    "%guid": "https://areajugones.sport.es/?post_type=videojuegos&p=729514",
+    "%url": "https://areajugones.sport.es/videojuegos/fifa-23-merece-la-pena-kaku-tots-solucion-del-sbc/",
+  };
+  const [text, setText] = useState("Nova notícia: %title\nPor %creator em %date\n%url");
+  const keys = Object.keys(samples).sort((a, b) => b.length - a.length);
+  const result = keys.reduce((acc, k) => acc.split(k).join(samples[k]), text);
+  return (
+    <div className="not-prose" style={{ border: "1px solid rgba(127,127,127,.25)", borderRadius: 12, padding: 16 }}>
+      <label style={{ fontSize: 13, opacity: 0.7 }}>Sua mensagem</label>
+      <textarea value={text} onChange={(e) => setText(e.target.value)} rows={3} style={{ width: "100%", marginTop: 6, padding: 10, borderRadius: 8, border: "1px solid rgba(127,127,127,.35)", background: "transparent", color: "inherit", font: "inherit", resize: "vertical" }} />
+      <div style={{ fontSize: 13, opacity: 0.7, marginTop: 12 }}>Como o The Reaper envia</div>
+      <div style={{ marginTop: 6, padding: "10px 12px", borderRadius: 8, background: "#383a40", color: "#dbdee1", whiteSpace: "pre-wrap", overflowWrap: "anywhere" }}>{result}</div>
+    </div>
+  );
+};

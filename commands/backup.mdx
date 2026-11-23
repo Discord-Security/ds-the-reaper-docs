@@ -1,44 +1,93 @@
 ---
-title: "Backup"
-description: "Faça uma cópia de segurança completa do seu servidor."
-mode: "wide"
+title: "Criar e restaurar backups do servidor com o /backup"
+sidebarTitle: "Backup"
+description: "Use o /backup para criar, carregar ou remover cópias de segurança completas do servidor, inclusive com envio automático semanal na sua DM."
+icon: "cloud-arrow-up"
 ---
 
-Para usá-lo, digite **/backup**.
+O comando **/backup** faz uma cópia de segurança completa do seu servidor. Cada backup recebe um ID e uma senha, que você usa depois para carregar ou remover a cópia.
 
-O mesmo irá ter 4 grupos:
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
+
+## Como usar
+
+Digite **/backup** no chat e escolha uma das quatro opções abaixo.
 
 <Tabs>
   <Tab title="Criar">
-    Crie o backup, este irá dar um ID e uma senha para você utilizá-lo quando estiver disposto a tomar tal medida.
+    Cria o backup. O bot entrega um ID e uma senha para você usar quando estiver disposto a restaurar o servidor.
 
-    ![](https://i.imgur.com/RzDVB8P.png)
+    <Frame caption="Opção Criar do comando /backup no Discord.">
+      <img
+        src="https://i.imgur.com/RzDVB8P.png"
+        alt="Opção Criar do comando /backup mostrando o ID e a senha do backup"
+      />
+    </Frame>
   </Tab>
   <Tab title="Automático">
-    Cria o backup, este irá dar um ID e uma senha para você utilizá-lo quando estiver disposto a tomar tal medida. E nas segundas-feiras às 18 horas passará uma nova cópia de segurança na sua DM.
+    Cria o backup, com ID e senha, e envia uma nova cópia de segurança na sua DM toda segunda-feira às 18 horas.
 
     <Warning>
-      É recomendável você abrir as suas mensagens diretas com o The Reaper para receber os backups.
+      Abra as suas mensagens diretas com o The Reaper para conseguir receber os backups.
     </Warning>
-    ![](https://i.ibb.co/JwbksFtJ/image.png)
+
+    <Frame caption="Opção Automático do comando /backup no Discord.">
+      <img
+        src="https://i.ibb.co/JwbksFtJ/image.png"
+        alt="Opção Automático do comando /backup no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Carregar">
-    Carregue com um ID e uma senha o backup criado com esse ID.
+    Carrega o backup criado com um determinado ID e senha.
 
-    - `BackupID`: Identifique o ID do Backup gerado no **/backup criar**.
-    - `Senha`: Identifique a senha de Backups do servidor onde o backup será carregado.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `BackupID` | O ID do backup gerado ao usar o **/backup criar**. |
+    | `Senha` | A senha de backups do servidor onde o backup será carregado. |
 
     <Danger>
-      **CUIDADO\!** Você ao utilizar este comando está consentindo o bot a destruir todo o seu servidor para refazer tudo o que foi guardado durante o backup.
+      **Cuidado.** Ao usar este comando você autoriza o bot a destruir todo o seu servidor para refazer tudo o que foi guardado durante o backup.
     </Danger>
-    ![](https://i.imgur.com/HozJIKs.png)
+
+    <Frame caption="Opção Carregar do comando /backup no Discord.">
+      <img
+        src="https://i.imgur.com/HozJIKs.png"
+        alt="Opção Carregar do comando /backup no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Remover">
-    Remova do nosso banco de dados, o backup criado com esse ID.
+    Remove do banco de dados do The Reaper o backup criado com esse ID.
 
-    - `BackupID`: Identifique o ID do Backup gerado no **/backup criar**.
-    - `Senha`: Identifique a senha de Backups do servidor onde o backup será apagado.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `BackupID` | O ID do backup gerado ao usar o **/backup criar**. |
+    | `Senha` | A senha de backups do servidor onde o backup será apagado. |
 
-    ![](https://i.imgur.com/AqFe00W.png)
+    <Frame caption="Opção Remover do comando /backup no Discord.">
+      <img
+        src="https://i.imgur.com/AqFe00W.png"
+        alt="Opção Remover do comando /backup no Discord"
+      />
+    </Frame>
   </Tab>
 </Tabs>
+
+<Tip>
+  Guarde o ID e a senha do backup em um lugar seguro. Você precisa dos dois para carregar ou remover a cópia.
+</Tip>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Reverter raid" icon="clock-rotate-left" href="/commands/reverter-raid">
+    Volte 24 horas no tempo após uma raid.
+  </Card>
+
+  <Card title="Reset" icon="rotate-left" href="/commands/reset">
+    Apague os dados do servidor do banco de dados.
+  </Card>
+</Columns>

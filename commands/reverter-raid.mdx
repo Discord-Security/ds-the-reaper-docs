@@ -1,15 +1,49 @@
 ---
-title: "Reverter Raid"
-description: "Volte 24 horas no tempo removendo banimentos, restaurante canais, categorias e cargos. Os cargos são devolvidos aos membros que ainda estão no servidor."
-mode: "wide"
+title: "Reverter uma raid em 24 horas com o comando /revert-raid"
+sidebarTitle: "Reverter raid"
+description: "Use o /revert-raid para voltar 24 horas no tempo: remove banimentos e restaura canais, categorias e cargos, devolvendo os cargos a quem ficou no servidor."
+icon: "clock-rotate-left"
 ---
 
-Para usá-lo, digite **/revert-raid**.
+O comando **/revert-raid** volta 24 horas no tempo no seu servidor depois de uma raid. Ele remove banimentos e restaura canais, categorias e cargos. Os cargos são devolvidos aos membros que ainda estão no servidor.
+
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
+
+## Como usar
+
+Digite **/revert-raid** no chat e escolha o comando na lista do Discord. Ele não tem campos para preencher.
+
+## O que o comando faz
+
+| Item | O que acontece |
+| --- | --- |
+| Banimentos | São removidos, voltando 24 horas no tempo. |
+| Canais e categorias | São restaurados. |
+| Cargos | São restaurados e devolvidos aos membros que ainda estão no servidor. |
 
 ## Exemplo
 
-<img
-  src="/images/swappy-20261118_185535.png"
-  className="mx-auto"
-  alt=""
-/>
+<Frame caption="Resultado do comando /revert-raid no Discord.">
+  <img
+    src="/images/swappy-20261118_185535.png"
+    alt="Exemplo do servidor restaurado com o comando /revert-raid no Discord"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Lockdown" icon="shield-halved" href="/commands/lockdown">
+    Feche todos os chats do servidor durante uma raid.
+  </Card>
+
+  <Card title="Massban" icon="users" href="/commands/massban">
+    Bana vários usuários de uma vez.
+  </Card>
+
+  <Card title="Backup" icon="cloud-arrow-up" href="/commands/backup">
+    Tenha uma cópia de segurança completa do servidor.
+  </Card>
+</Columns>

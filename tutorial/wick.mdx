@@ -1,21 +1,57 @@
 ---
-title: "Conflitos com o Wick"
-description: "É normal que seu servidor use protocolos de segurança como o Wick, e o Wick normalmente entra em conflito com o The Reaper, pois o Wick têm um protocolo de checar quantos banimentos um usuário deve fazer em pouco tempo e acaba que o uso de vários banimentos prejudiquem o bom funcionamento do The Reaper em seu servidor."
-mode: "wide"
+title: "Como resolver conflitos com o bot Wick"
+sidebarTitle: "Conflitos com o Wick"
+description: "Resolva o conflito entre o Wick e o The Reaper sem remover nenhum dos bots: basta liberar o The Reaper na whitelist da dashboard do Wick."
+icon: "shield-halved"
 ---
 
-![](https://i.imgur.com/TALO7vf.png)
+É normal que o seu servidor use bots de segurança como o Wick. O problema é que o Wick costuma entrar em conflito com o The Reaper: ele checa quantos banimentos um usuário faz em pouco tempo, e o uso de vários banimentos acaba prejudicando o bom funcionamento do The Reaper no seu servidor.
 
-Mas relaxe que nem tudo está perdido e você não precisa tirar o Wick para resolver isso, na verdade, é bem simples, siga o tutorial a seguir:
+<Frame>
+  <img
+    src="https://i.imgur.com/TALO7vf.png"
+    alt="Exemplo do conflito entre o Wick e o The Reaper"
+  />
+</Frame>
+
+Relaxe, nem tudo está perdido e você não precisa tirar o Wick para resolver isso. A solução é simples: coloque o The Reaper na whitelist do Wick.
+
+## Como resolver
 
 <Steps>
-  <Step title="Você deverá usar a Dashboard do Wick, ir no seu servidor e ir na aba Whitelist" titleSize="h2">
-    ![](https://imgur.com/22aa643.png)
+  <Step title="Abra a Whitelist na dashboard do Wick">
+    Entre na dashboard do Wick, escolha o seu servidor e vá na aba **Whitelist**.
+
+    <Frame>
+      <img
+        src="https://imgur.com/22aa643.png"
+        alt="Aba Whitelist na dashboard do Wick"
+      />
+    </Frame>
   </Step>
-  <Step title="Escolha um usuário e na aba Permissions, escolha todas as permissões (vai que no futuro eu precise de algo extra sem meu dev precisar ocupar mais do seu tempo com esse bot rs)" titleSize="h2">
-    ![](https://imgur.com/IwZDF8l.png)
+  <Step title="Escolha todas as permissões">
+    Escolha o usuário e, na aba **Permissions**, marque todas as permissões. Assim você não precisa voltar aqui se o bot precisar de algo extra no futuro.
+
+    <Frame>
+      <img
+        src="https://imgur.com/IwZDF8l.png"
+        alt="Aba Permissions com todas as permissões marcadas na dashboard do Wick"
+      />
+    </Frame>
   </Step>
-  <Step title="Faça Apply!" titleSize="h2">
-    
+  <Step title="Clique em Apply">
+    Clique em **Apply** para salvar.
   </Step>
 </Steps>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Conflitos com o Security" icon="shield-halved" href="/tutorial/security">
+    Resolva o mesmo problema com o bot Security.
+  </Card>
+
+  <Card title="Primeiros passos" icon="rocket" href="/primeiros-passos">
+    Veja como adicionar e configurar o The Reaper.
+  </Card>
+</Columns>

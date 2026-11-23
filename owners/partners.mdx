@@ -1,23 +1,72 @@
 ---
-title: "Variáveis de agradecimento de parceria"
-description: "Veja quais são as variáveis para os agradecimentos de parceria."
-mode: "wide"
+title: "Variáveis do agradecimento de parceria"
+sidebarTitle: "Variáveis de parcerias"
+description: "Veja todas as variáveis que você pode usar no agradecimento de parceria do The Reaper, como %membroRank, %membroParcerias e %representante."
+icon: "brackets-curly"
 ---
 
-<img
-  src="https://i.imgur.com/oSdBaYy.png"
-  className="mx-auto"
-/>
+As variáveis são códigos curtos, como `%membroRank`, que você escreve na mensagem do [/parcerias_aviso](/commands/partners_warn). Quando o The Reaper envia o agradecimento, cada código é trocado pela informação real, como o total de parcerias do staff ou o nome do servidor.
 
-| Sintaxe          | Descrição                                  | Exemplo             |
-| ---------------- | ------------------------------------------ | ------------------- |
-| %membroMenção    | Mencionará o representante do seu servidor | @Kuriel#1411        |
-| %membroTag       | Tag do usuário                             | Kuriel#1411         |
-| %membroRank      | Posição do usuário quanto a outros staffs  | 1º Lugar            |
-| %membroParcerias | Total de parcerias do usuário              | 37                  |
-| %membroAvatar    | Icon do Perfil                             |                     |
-| %membroId        | ID do Perfil                               | 354233941550694400  |
-| %representante   | Menciona o representante                   | @Kaze#7631          |
-| %serverNome      | Nome do Servidor                           | The Reaper          |
-| %serverId        | ID do Servidor                             | 1025774982980186183 |
-| %serverIcon      | Icon do Servidor                           |                     |
+## Teste as variáveis
+
+Edite o texto abaixo para ver como a mensagem fica. A prévia usa os valores de exemplo da tabela.
+
+<VariablePreview />
+
+## Lista de variáveis
+
+| Sintaxe | O que mostra | Exemplo |
+| --- | --- | --- |
+| `%membroMenção` | Menciona o representante do seu servidor | @Kuriel#1411 |
+| `%membroTag` | A tag do usuário | Kuriel#1411 |
+| `%membroRank` | A posição do usuário em relação aos outros staffs | 1º Lugar |
+| `%membroParcerias` | O total de parcerias do usuário | 37 |
+| `%membroAvatar` | O ícone do perfil | Imagem do perfil |
+| `%membroId` | O ID do perfil | 354233941550694400 |
+| `%representante` | Menciona o representante | @Kaze#7631 |
+| `%serverNome` | O nome do servidor | The Reaper |
+| `%serverId` | O ID do servidor | 1025774982980186183 |
+| `%serverIcon` | O ícone do servidor | Imagem do servidor |
+
+<Frame caption="Exemplo de agradecimento de parceria usando variáveis.">
+  <img
+    src="https://i.imgur.com/oSdBaYy.png"
+    alt="Exemplo de agradecimento de parceria usando variáveis"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Parcerias aviso" icon="handshake" href="/commands/partners_warn">
+    Configure o agradecimento de parcerias.
+  </Card>
+
+  <Card title="Variáveis de boas-vindas e saída" icon="brackets-curly" href="/owners/welcome">
+    Veja as variáveis das mensagens de entrada e saída.
+  </Card>
+</Columns>
+
+export const VariablePreview = () => {
+  const samples = {
+    "%membroParcerias": "37",
+    "%membroMenção": "@Kuriel#1411",
+    "%representante": "@Kaze#7631",
+    "%membroRank": "1º Lugar",
+    "%serverNome": "The Reaper",
+    "%membroTag": "Kuriel#1411",
+    "%membroId": "354233941550694400",
+    "%serverId": "1025774982980186183",
+  };
+  const [text, setText] = useState("Obrigado pela parceria, %representante! Atendimento de %membroMenção, %membroRank com %membroParcerias parcerias em %serverNome.");
+  const keys = Object.keys(samples).sort((a, b) => b.length - a.length);
+  const result = keys.reduce((acc, k) => acc.split(k).join(samples[k]), text);
+  return (
+    <div className="not-prose" style={{ border: "1px solid rgba(127,127,127,.25)", borderRadius: 12, padding: 16 }}>
+      <label style={{ fontSize: 13, opacity: 0.7 }}>Sua mensagem</label>
+      <textarea value={text} onChange={(e) => setText(e.target.value)} rows={3} style={{ width: "100%", marginTop: 6, padding: 10, borderRadius: 8, border: "1px solid rgba(127,127,127,.35)", background: "transparent", color: "inherit", font: "inherit", resize: "vertical" }} />
+      <div style={{ fontSize: 13, opacity: 0.7, marginTop: 12 }}>Como o The Reaper envia</div>
+      <div style={{ marginTop: 6, padding: "10px 12px", borderRadius: 8, background: "#383a40", color: "#dbdee1", whiteSpace: "pre-wrap" }}>{result}</div>
+    </div>
+  );
+};

@@ -1,29 +1,69 @@
 ---
-title: "Autopublish"
-description: "Autopublica os canais de anúncio."
-mode: "wide"
+title: "Publicar anúncios automaticamente com o /autopublish"
+sidebarTitle: "Autopublish"
+description: "Use o /autopublish para publicar automaticamente as mensagens dos canais de anúncio do seu servidor. Adicione, remova ou liste os canais ativos."
+icon: "bullhorn"
 ---
 
-Para usá-lo, digite **/autopublish**.
+O comando **/autopublish** publica automaticamente as mensagens dos canais de anúncio do seu servidor. Você adiciona ou remove canais de notícias e consulta quais estão ativos.
+
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
+
+## Como usar
+
+Digite **/autopublish** no chat e escolha uma das três opções abaixo.
 
 <Tabs>
   <Tab title="Adicionar">
-    Use essa opção para adicionar um novo canal de notícias ao bot e assim ele começará a publicar novas mensagens.
+    Adiciona um novo canal de notícias ao bot, que passa a publicar as novas mensagens dele.
 
-    - `Canal`: Identifique um canal de notícias para suas mensagens serem automaticamente publicadas em outros servidores.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `Canal` | O canal de notícias cujas mensagens serão publicadas automaticamente em outros servidores. |
 
-    ![](https://i.imgur.com/85653hL.png)
+    <Frame caption="Opção Adicionar do comando /autopublish no Discord.">
+      <img
+        src="https://i.imgur.com/85653hL.png"
+        alt="Opção Adicionar do comando /autopublish no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Remover">
-    Use essa opção para remover um novo canal de notícias ao bot e assim ele para de publicar novas mensagens.
+    Remove um canal de notícias do bot, que deixa de publicar as novas mensagens dele.
 
-    - `Canal`: Identifique um canal de notícias para suas mensagens pararem de serem automaticamente publicadas em outros servidores.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `Canal` | O canal de notícias cujas mensagens deixarão de ser publicadas automaticamente em outros servidores. |
 
-    ![](https://i.imgur.com/tgBGQvY.png)
+    <Frame caption="Opção Remover do comando /autopublish no Discord.">
+      <img
+        src="https://i.imgur.com/tgBGQvY.png"
+        alt="Opção Remover do comando /autopublish no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Lista">
-    Esta irá listar todos os canais definidos até ao momento ativos no servidor.
+    Lista todos os canais definidos que estão ativos no servidor até o momento.
 
-    ![](https://i.imgur.com/saIGypi.png)
+    <Frame caption="Opção Lista do comando /autopublish no Discord.">
+      <img
+        src="https://i.imgur.com/saIGypi.png"
+        alt="Opção Lista do comando /autopublish mostrando os canais ativos"
+      />
+    </Frame>
   </Tab>
 </Tabs>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Automessage" icon="message" href="/commands/automessage">
+    Configure mensagens automáticas no servidor.
+  </Card>
+
+  <Card title="RSS" icon="rss" href="/owners/rss">
+    Veja como funcionam as variáveis de RSS.
+  </Card>
+</Columns>

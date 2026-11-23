@@ -1,27 +1,124 @@
 ---
-title: "Gravidades de Banimento"
-description: "Considere qual gravidade de banimento deseja usar para cada punição."
-mode: "wide"
+title: "Gravidades de banimento do The Reaper"
+sidebarTitle: "Gravidades de banimento"
+description: "Entenda a diferença entre a gravidade 1 e a gravidade 2 nos banimentos do The Reaper e descubra qual usar para cada tipo de comportamento."
+icon: "scale-balanced"
 ---
 
-![](/images/gravidadesbanner.png)
+Toda vez que você bane ou desbane alguém com o [/ban](/commands/ban), o [/unban](/commands/unban) ou o [/massban](/commands/massban), precisa escolher uma gravidade: **1** ou **2**. A gravidade decide o alcance do banimento e deve combinar com o que o usuário fez.
+
+<Frame>
+  <img
+    src="/images/gravidadesbanner.png"
+    alt="Banner da página de gravidades de banimento"
+  />
+</Frame>
+
+## Qual gravidade usar?
+
+Escolha o que o usuário fez para ver a gravidade indicada.
+
+<SeverityPicker />
+
+## Compare as duas gravidades
+
+|  | Gravidade 1 | Gravidade 2 |
+| --- | --- | --- |
+| **Nível** | A mais baixa | Comportamentos que não devem ser tolerados |
+| **Onde bane** | Somente no seu servidor | Em todos os servidores ligados à rede |
+| **Ao desbanir** | Desbane apenas no servidor onde o comando foi executado | Desbane em todos os servidores |
+| **Exemplos** | Spam leve de mensagens ou flood leve | Divulgação de convites, comentários preconceituosos, raids, ataques de hackers e floods excessivos |
+
+<Warning>
+  Para entrar na rede The Reaper, é obrigatório usar a gravidade 2.
+</Warning>
 
 ## Gravidade 1
 
-Lembre-se de que a gravidade de banimento nível 1 é a mais baixa. Portanto, um usuário que faça um spam leve de mensagens ou um flood leve deve ser banido com a gravidade de banimento 1.
+A gravidade de banimento nível 1 é a mais baixa. Um usuário que faça spam leve de mensagens ou flood leve deve ser banido com a gravidade 1.
 
-<Check>
-  Em caso de desbanimentos, o efeito será que este desbanirá apenas no servidor executado.
-</Check>
+O protocolo da gravidade 1 bane somente no seu servidor. Em caso de desbanimento, o efeito é desbanir apenas no servidor onde o comando foi executado.
 
-![](/images/gravidade1.png)
+<Note>
+  Até agora, nenhum servidor concordou em banir usuários na gravidade 1.
+</Note>
+
+<Frame caption="Protocolo da gravidade 1.">
+  <img
+    src="/images/protocolo1.png"
+    alt="Protocolo da gravidade 1"
+  />
+</Frame>
+
+<Frame caption="Exemplo da gravidade 1.">
+  <img
+    src="/images/gravidade1.png"
+    alt="Exemplo da gravidade 1"
+  />
+</Frame>
 
 ## Gravidade 2
 
-A gravidade 2 já abrange alguns comportamentos que não devem ser tolerados, como a divulgação de convites de servidores Discord ou comentários preconceituosos, ameaças ao servidor como raids ou ataques de hackers, floods excessivos, entre outros.
+A gravidade 2 abrange comportamentos que não devem ser tolerados, como a divulgação de convites de servidores Discord, comentários preconceituosos, ameaças ao servidor como raids ou ataques de hackers, floods excessivos, entre outros.
 
-<Check>
-  Em caso de desbanimentos, o efeito será que este desbanirá em todos os servidores.
-</Check>
+O protocolo da gravidade 2 bane em todos os servidores ligados à rede. Em caso de desbanimento, o efeito é desbanir em todos os servidores.
 
-![](/images/gravidade2.png)
+<Frame caption="Protocolo da gravidade 2.">
+  <img
+    src="/images/protocolo2.png"
+    alt="Protocolo da gravidade 2"
+  />
+</Frame>
+
+<Frame caption="Exemplo da gravidade 2.">
+  <img
+    src="/images/gravidade2.png"
+    alt="Exemplo da gravidade 2"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Ban" icon="gavel" href="/commands/ban">
+    Bana um usuário escolhendo a gravidade.
+  </Card>
+
+  <Card title="Unban" icon="user-check" href="/commands/unban">
+    Desfaça um banimento.
+  </Card>
+
+  <Card title="Massban" icon="users" href="/commands/massban">
+    Bana vários usuários de uma vez.
+  </Card>
+
+  <Card title="Proof" icon="file-circle-check" href="/commands/proof">
+    Envie provas de um caso ao servidor oficial.
+  </Card>
+</Columns>
+
+export const SeverityPicker = () => {
+  const options = [
+    { label: "Spam leve de mensagens", level: 1 },
+    { label: "Flood leve", level: 1 },
+    { label: "Divulgação de convites de servidores Discord", level: 2 },
+    { label: "Comentários preconceituosos", level: 2 },
+    { label: "Ameaças ao servidor, como raids ou ataques de hackers", level: 2 },
+    { label: "Floods excessivos", level: 2 },
+  ];
+  const [index, setIndex] = useState(0);
+  const picked = options[index];
+  return (
+    <div className="not-prose" style={{ border: "1px solid rgba(127,127,127,.25)", borderRadius: 12, padding: 16 }}>
+      <label style={{ fontSize: 13, opacity: 0.7 }}>O que o usuário fez?</label>
+      <select value={index} onChange={(e) => setIndex(Number(e.target.value))} style={{ display: "block", width: "100%", marginTop: 6, padding: 10, borderRadius: 8, border: "1px solid rgba(127,127,127,.35)", background: "transparent", color: "inherit", font: "inherit" }}>
+        {options.map((o, i) => (
+          <option key={o.label} value={i}>{o.label}</option>
+        ))}
+      </select>
+      <div style={{ marginTop: 12, padding: "10px 12px", borderRadius: 8, background: "#383a40", color: "#dbdee1" }}>
+        {picked.level === 1 ? "Use a gravidade 1: bane somente no seu servidor." : "Use a gravidade 2: bane em todos os servidores ligados à rede."}
+      </div>
+    </div>
+  );
+};

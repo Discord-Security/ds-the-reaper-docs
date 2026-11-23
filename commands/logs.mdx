@@ -1,23 +1,79 @@
 ---
-title: "Logs"
-description: "Define registros como mensagens apagadas, editadas do seu servidor em certo canal, e ativar ou desativar."
-mode: "wide"
+title: "Registrar mensagens apagadas e editadas com o /logs"
+sidebarTitle: "Logs"
+description: "Use o /logs para registrar mensagens apagadas e editadas do servidor em um canal à sua escolha, ativando ou desativando cada tipo de registro."
+icon: "clipboard-list"
 ---
 
-Para usar, digite **/logs**.
+O comando **/logs** define registros do seu servidor, como mensagens apagadas e editadas, em um canal que você escolher. Você também ativa ou desativa cada tipo de registro por ele.
 
-<img
-  src="https://i.imgur.com/9TpJ0i5.png"
-  className="mx-auto"
-/>
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
 
-- `Tipo`: Este basta escolher alguma das opções que o bot indicará.
-- `Canal`: Diga um dos canais do seu servidor para o bot enviar os registros.
-- `Ativado`: Defina como ativado ou não.
+## Como usar
+
+Clique em **Próximo** para ver o comando sendo preenchido, campo por campo, como acontece no Discord.
+
+<CommandDemo />
+
+## O que colocar em cada campo
+
+| Campo | O que colocar |
+| --- | --- |
+| `Tipo` | Escolha uma das opções que o bot mostra. |
+| `Canal` | Informe um dos canais do seu servidor para o bot enviar os registros. |
+| `Ativado` | Defina se o registro fica ativado ou não. |
 
 ## Exemplo
 
-<img
-  src="https://i.imgur.com/VwfI8P7.png"
-  className="mx-auto"
-/>
+<Frame caption="Resultado do comando /logs no Discord.">
+  <img
+    src="https://i.imgur.com/VwfI8P7.png"
+    alt="Exemplo de registro enviado pelo comando /logs em um canal do servidor"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Antispam" icon="shield" href="/commands/antispam">
+    Detecte spam em massa e puna automaticamente.
+  </Card>
+
+  <Card title="Dados guardados" icon="database" href="/owners/dados">
+    Veja o que o The Reaper guarda sobre o servidor.
+  </Card>
+</Columns>
+
+export const CommandDemo = () => {
+  const command = "/logs";
+  const fields = [
+    { name: "Tipo", value: "tipo de registro", hint: "escolha uma das opções que o bot mostra." },
+    { name: "Canal", value: "#logs", hint: "escolha o canal onde os registros serão enviados." },
+    { name: "Ativado", value: "sim", hint: "defina se o registro fica ativado ou não." },
+  ];
+  const [step, setStep] = useState(0);
+  const done = step === fields.length;
+  const btn = { padding: "6px 12px", borderRadius: 6, border: "1px solid rgba(127,127,127,.35)", background: "transparent", color: "inherit", font: "inherit", cursor: "pointer" };
+  return (
+    <div className="not-prose" style={{ border: "1px solid rgba(127,127,127,.25)", borderRadius: 12, padding: 16 }}>
+      <div style={{ background: "#383a40", color: "#dbdee1", borderRadius: 8, padding: "10px 12px", display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center", fontSize: 15 }}>
+        <span style={{ background: "#5865f2", color: "#fff", borderRadius: 4, padding: "1px 8px", fontWeight: 600 }}>{command}</span>
+        {fields.slice(0, step).map((f) => (
+          <span key={f.name} style={{ background: "#2b2d31", borderRadius: 4, padding: "1px 8px" }}>
+            <span style={{ opacity: 0.6 }}>{f.name}: </span>{f.value}
+          </span>
+        ))}
+        {!done && <span style={{ opacity: 0.5 }}>{fields[step].name}</span>}
+      </div>
+      <p style={{ margin: "12px 0", fontSize: 14 }}>
+        {done ? "Tudo preenchido. Pressione Enter para enviar o comando." : (step === 0 ? "Digite " + command + " no chat e escolha o comando na lista do Discord. " : "") + "Próximo campo, " + fields[step].name + ": " + fields[step].hint}
+      </p>
+      <div style={{ display: "flex", gap: 8 }}>
+        <button type="button" style={btn} disabled={step === 0} onClick={() => setStep(step - 1)}>Voltar</button>
+        <button type="button" style={btn} disabled={done} onClick={() => setStep(step + 1)}>Próximo</button>
+      </div>
+    </div>
+  );
+};
