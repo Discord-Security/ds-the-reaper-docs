@@ -1,62 +1,131 @@
 ---
-title: "Welcome"
-description: "Permita personalizar a mensagem de entrada do seu servidor."
-mode: "wide"
+title: "Configurar a mensagem de boas-vindas com o comando /welcome"
+sidebarTitle: "Welcome"
+description: "Use o /welcome para personalizar a mensagem de entrada do servidor: monte o texto, escolha o canal, defina o tempo, teste e ofereça cargos aos novos membros."
+icon: "hand-wave"
 ---
 
-# Comando Welcome
+O comando **/welcome** personaliza a mensagem de entrada do seu servidor, enviada quando um novo membro chega. Você monta a mensagem, escolhe o canal, define quando ela é apagada e ainda pode oferecer cargos automaticamente aos novos membros.
 
-Para usá-lo, digite **/welcome**.
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
 
-O mesmo possui 8 grupos:
+## Como usar
+
+Digite **/welcome** no chat e escolha uma das oito opções abaixo.
 
 <Tabs>
   <Tab title="Mensagem">
-    Para enviar o conteúdo da sua mensagem em formato JSON, basta construir tudo da sua maneira e usar as [variáveis](/owners/welcome) disponíveis [neste site](https://message.style/app/editor). Isso permitirá que a mensagem seja construída eficientemente.
+    Envia o conteúdo da sua mensagem em formato JSON. Monte tudo do seu jeito no [editor do message.style](https://message.style/app/editor), usando as [variáveis](/owners/welcome) disponíveis, e depois cole o resultado no comando. Assim a mensagem é construída de forma eficiente.
 
-    ![](https://i.imgur.com/G2vxAGd.png)
+    <Frame caption="Opção Mensagem do comando /welcome no Discord.">
+      <img
+        src="https://i.imgur.com/G2vxAGd.png"
+        alt="Opção Mensagem do comando /welcome no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Tempo">
-    Defina um limite de tempo (por exemplo, 1d, 1h) após a criação da mensagem para apagar no seu servidor.
+    Define um limite de tempo, por exemplo `1d` ou `1h`, depois do qual a mensagem é apagada no seu servidor.
 
-    - `Tempo`: Identifique o intervalo de tempo após a criação da mensagem.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `Tempo` | O intervalo de tempo após a criação da mensagem. |
 
-    ![](https://i.imgur.com/gE3lyUH.png)
+    <Frame caption="Opção Tempo do comando /welcome no Discord.">
+      <img
+        src="https://i.imgur.com/gE3lyUH.png"
+        alt="Opção Tempo do comando /welcome no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Canal">
-    Mencione um canal para o The Reaper enviar os seus bem-vindos\!
+    Define o canal para o The Reaper enviar as boas-vindas.
 
-    - `Canal`: Identifique o canal onde será enviada as entradas.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `Canal` | O canal onde as mensagens de entrada serão enviadas. |
 
-    ![](https://i.imgur.com/jwLCQPc.png)
+    <Frame caption="Opção Canal do comando /welcome no Discord.">
+      <img
+        src="https://i.imgur.com/jwLCQPc.png"
+        alt="Opção Canal do comando /welcome no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Ativar">
-    Use essa opção para alternar entre o sistema online ou offline no seu servidor.
+    Alterna o sistema entre online e offline no seu servidor.
 
-    ![](https://i.imgur.com/SFKrAPw.png)
+    <Frame caption="Opção Ativar do comando /welcome no Discord.">
+      <img
+        src="https://i.imgur.com/SFKrAPw.png"
+        alt="Opção Ativar do comando /welcome no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Exportar">
-    Use essa opção para exportar o conteúdo colocado no `/welcome message`.
+    Exporta o conteúdo colocado na opção **Mensagem** do `/welcome`.
 
-    ![](https://i.imgur.com/TYlhX98.png)
+    <Frame caption="Opção Exportar do comando /welcome no Discord.">
+      <img
+        src="https://i.imgur.com/TYlhX98.png"
+        alt="Opção Exportar do comando /welcome no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Testar">
-    Use somente se quiser testar o bem-vindo consigo mesmo sem sair do servidor, toda a configuração deve ser feita primeiro.
+    Use somente se quiser testar a mensagem de boas-vindas com você mesmo, sem sair do servidor. Toda a configuração precisa ser feita antes.
 
-    ![](https://i.imgur.com/kY3t6VL.png)
+    <Frame caption="Opção Testar do comando /welcome no Discord.">
+      <img
+        src="https://i.imgur.com/kY3t6VL.png"
+        alt="Opção Testar do comando /welcome no Discord"
+      />
+    </Frame>
   </Tab>
-  <Tab title="Adicionar Cargo">
-    Use essa opção para adicionar um cargo a ser oferecido automaticamente a novos membros.
+  <Tab title="Adicionar cargo">
+    Adiciona um cargo que é oferecido automaticamente aos novos membros.
 
-    - `Cargo`: Identifique o cargo que será adicionado ao usuário que entrar.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `Cargo` | O cargo que será adicionado ao usuário que entrar. |
 
-    ![](https://i.imgur.com/18ZbpDv.png)
+    <Frame caption="Opção Adicionar cargo do comando /welcome no Discord.">
+      <img
+        src="https://i.imgur.com/18ZbpDv.png"
+        alt="Opção Adicionar cargo do comando /welcome no Discord"
+      />
+    </Frame>
   </Tab>
-  <Tab title="Remover Cargo">
-    Use essa opção para remover um cargo de ser oferecido automaticamente ao entrar.
+  <Tab title="Remover cargo">
+    Remove um cargo da lista de cargos oferecidos automaticamente ao entrar.
 
-    - `Cargo`: Identifique o cargo que não deve ser oferecido ao entrar que esteja ativado.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `Cargo` | O cargo que não deve mais ser oferecido ao entrar. |
 
-    ![](https://i.imgur.com/FRbgYvo.png)
+    <Frame caption="Opção Remover cargo do comando /welcome no Discord.">
+      <img
+        src="https://i.imgur.com/FRbgYvo.png"
+        alt="Opção Remover cargo do comando /welcome no Discord"
+      />
+    </Frame>
   </Tab>
 </Tabs>
+
+<Tip>
+  Uma ordem simples para configurar: crie a **Mensagem**, defina o **Canal**, use **Ativar** e, por fim, confirme tudo com **Testar**.
+</Tip>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Variáveis de boas-vindas e saída" icon="brackets-curly" href="/owners/welcome">
+    Veja as variáveis que você pode usar nas mensagens.
+  </Card>
+
+  <Card title="Exit" icon="right-from-bracket" href="/commands/exit">
+    Configure a mensagem de saída.
+  </Card>
+</Columns>
