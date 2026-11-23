@@ -1,23 +1,72 @@
 ---
-title: "Variáveis do Bem-vindo"
-description: "Descubra todas as variáveis de entrada e saída."
-mode: "wide"
+title: "Variáveis de boas-vindas e saída"
+sidebarTitle: "Variáveis de boas-vindas"
+description: "Veja todas as variáveis que você pode usar nas mensagens de boas-vindas e de saída do The Reaper, como %nome, %membro e %serverNome."
+icon: "brackets-curly"
 ---
 
-<img
-  src="https://i.imgur.com/ad2exHs.jpeg"
-  className="mx-auto"
-/>
+As variáveis são códigos curtos, como `%nome`, que você escreve nas mensagens de [/welcome](/commands/welcome) e [/exit](/commands/exit). Quando o The Reaper envia a mensagem, cada código é trocado pela informação real, como o nome do usuário que entrou ou o nome do servidor.
 
-| Sintaxe           | Descrição                                           | Exemplo               |
-| ----------------- | --------------------------------------------------- | --------------------- |
-| %nome             | Aparecerá a nametag do usuário que acabou de entrar | Kuriel                |
-| %tag              | Tag do usuário                                      | #1411                 |
-| %membro           | Menção                                              | @Kuriel#1411          |
-| %avatar           | Icon do Perfil                                      |                       |
-| %id               | ID do Perfil                                        | 354233941550694400    |
-| %contadorRegistro | Informa a data de criação do usuário                | 25 de outubro de 2017 |
-| %serverNome       | Nome do Servidor                                    | The Reaper            |
-| %serverId         | ID do Servidor                                      | 1025774982980186183   |
-| %serverIcon       | Icon do Servidor                                    |                       |
-| %contadorMembros  | Total de Membros no servidor                        | 25                    |
+## Teste as variáveis
+
+Edite o texto abaixo para ver como a mensagem fica. A prévia usa os valores de exemplo da tabela.
+
+<VariablePreview />
+
+## Lista de variáveis
+
+| Sintaxe | O que mostra | Exemplo |
+| --- | --- | --- |
+| `%nome` | O nome do usuário que acabou de entrar | Kuriel |
+| `%tag` | A tag do usuário | #1411 |
+| `%membro` | A menção ao usuário | @Kuriel#1411 |
+| `%avatar` | O ícone do perfil | Imagem do perfil |
+| `%id` | O ID do perfil | 354233941550694400 |
+| `%contadorRegistro` | A data de criação da conta do usuário | 25 de outubro de 2017 |
+| `%serverNome` | O nome do servidor | The Reaper |
+| `%serverId` | O ID do servidor | 1025774982980186183 |
+| `%serverIcon` | O ícone do servidor | Imagem do servidor |
+| `%contadorMembros` | O total de membros no servidor | 25 |
+
+<Frame caption="Exemplo de mensagem usando variáveis.">
+  <img
+    src="https://i.imgur.com/ad2exHs.jpeg"
+    alt="Exemplo de mensagem de boas-vindas usando variáveis"
+  />
+</Frame>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Welcome" icon="hand-wave" href="/commands/welcome">
+    Configure a mensagem de boas-vindas.
+  </Card>
+
+  <Card title="Exit" icon="right-from-bracket" href="/commands/exit">
+    Configure a mensagem de saída.
+  </Card>
+</Columns>
+
+export const VariablePreview = () => {
+  const samples = {
+    "%contadorRegistro": "25 de outubro de 2017",
+    "%contadorMembros": "25",
+    "%serverNome": "The Reaper",
+    "%serverId": "1025774982980186183",
+    "%membro": "@Kuriel#1411",
+    "%nome": "Kuriel",
+    "%tag": "#1411",
+    "%id": "354233941550694400",
+  };
+  const [text, setText] = useState("Bem-vindo, %membro! Você é o membro número %contadorMembros de %serverNome.");
+  const keys = Object.keys(samples).sort((a, b) => b.length - a.length);
+  const result = keys.reduce((acc, k) => acc.split(k).join(samples[k]), text);
+  return (
+    <div className="not-prose" style={{ border: "1px solid rgba(127,127,127,.25)", borderRadius: 12, padding: 16 }}>
+      <label style={{ fontSize: 13, opacity: 0.7 }}>Sua mensagem</label>
+      <textarea value={text} onChange={(e) => setText(e.target.value)} rows={3} style={{ width: "100%", marginTop: 6, padding: 10, borderRadius: 8, border: "1px solid rgba(127,127,127,.35)", background: "transparent", color: "inherit", font: "inherit", resize: "vertical" }} />
+      <div style={{ fontSize: 13, opacity: 0.7, marginTop: 12 }}>Como o The Reaper envia</div>
+      <div style={{ marginTop: 6, padding: "10px 12px", borderRadius: 8, background: "#383a40", color: "#dbdee1", whiteSpace: "pre-wrap" }}>{result}</div>
+    </div>
+  );
+};
