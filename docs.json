@@ -23,7 +23,11 @@
                     {
                       "group": "Começar",
                       "icon": "rocket",
-                      "pages": []
+                      "pages": [
+                        "index",
+                        "primeiros-passos",
+                        "ajuda"
+                      ]
                     }
                 ]
             },
