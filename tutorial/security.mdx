@@ -1,16 +1,51 @@
 ---
-title: "Conflitos com o Security"
-description: "É normal que seu servidor use protocolos de segurança como o Security, e o Security normalmente entra em conflito com o The Reaper, pois o Security têm um protocolo de checar quantos banimentos um usuário deve fazer em pouco tempo e acaba que o uso de vários banimentos prejudiquem o bom funcionamento do The Reaper em seu servidor."
-mode: "wide"
+title: "Como resolver conflitos com o bot Security"
+sidebarTitle: "Conflitos com o Security"
+description: "Resolva o conflito entre o Security e o The Reaper sem remover nenhum dos bots: basta adicionar o The Reaper à whitelist do Security com um comando."
+icon: "shield-halved"
 ---
 
-<img
-  src="https://i.imgur.com/7ip8xEr.png"
-  className="mx-auto"
-/>
+É normal que o seu servidor use bots de segurança como o Security. O problema é que o Security costuma entrar em conflito com o The Reaper: ele checa quantos banimentos um usuário faz em pouco tempo, e o uso de vários banimentos acaba prejudicando o bom funcionamento do The Reaper no seu servidor.
 
-Mas relaxe que nem tudo está perdido e você não precisa tirar o Security para resolver isso, na verdade, é bem simples, siga o tutorial a seguir:
+<Frame>
+  <img
+    src="https://i.imgur.com/7ip8xEr.png"
+    alt="Exemplo do conflito entre o Security e o The Reaper"
+  />
+</Frame>
 
-Somente basta usar o comando `/whitelist add_user user:992615467715940392 category:Users: All`
+Relaxe, nem tudo está perdido e você não precisa tirar o Security para resolver isso. A solução é simples: coloque o The Reaper na whitelist do Security.
 
-![](https://i.imgur.com/E2YrNZT.png)
+## Como resolver
+
+<Steps>
+  <Step title="Use o comando de whitelist do Security">
+    No seu servidor, envie este comando:
+
+    ```text
+    /whitelist add_user user:992615467715940392 category:Users: All
+    ```
+  </Step>
+  <Step title="Confira o resultado">
+    O Security confirma que o The Reaper foi adicionado à whitelist.
+
+    <Frame>
+      <img
+        src="https://i.imgur.com/E2YrNZT.png"
+        alt="Confirmação do Security após adicionar o The Reaper à whitelist"
+      />
+    </Frame>
+  </Step>
+</Steps>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Conflitos com o Wick" icon="shield-halved" href="/tutorial/wick">
+    Resolva o mesmo problema com o bot Wick.
+  </Card>
+
+  <Card title="Primeiros passos" icon="rocket" href="/primeiros-passos">
+    Veja como adicionar e configurar o The Reaper.
+  </Card>
+</Columns>
