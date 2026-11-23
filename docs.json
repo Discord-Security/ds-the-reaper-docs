@@ -19,7 +19,12 @@
                     "owners/partners",
                     "owners/protocolos",
                     "owners/rss",
-                    "owners/welcome"
+                    "owners/welcome",
+                    {
+                      "group": "Começar",
+                      "icon": "rocket",
+                      "pages": []
+                    }
                 ]
             },
             {
