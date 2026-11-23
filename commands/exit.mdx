@@ -1,61 +1,89 @@
 ---
-title: "Exit"
-description: "Configure uma mensagem de saída para o seu servidor."
-mode: "wide"
+title: "Configurar a mensagem de saída com o comando /exit"
+sidebarTitle: "Exit"
+description: "Use o /exit para configurar a mensagem de saída do servidor: defina o texto, o canal, o tempo até ser apagada, ative o sistema e exporte o conteúdo."
+icon: "right-from-bracket"
 ---
 
-Para usá-lo, digite **/exit**.
+O comando **/exit** configura a mensagem de saída do seu servidor, enviada quando alguém sai da comunidade. Você monta a mensagem, escolhe o canal, define quando ela é apagada e liga ou desliga o sistema.
 
-O mesmo irá ter 5 grupos:
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
+
+## Como usar
+
+Digite **/exit** no chat e escolha uma das cinco opções abaixo.
 
 <Tabs>
   <Tab title="Mensagem">
-    Para enviar o conteúdo da sua mensagem em formato JSON, basta construir tudo da sua maneira e usar as [variáveis](/owners/welcome) disponíveis [neste site](https://message.style/app/editor). Isso permitirá que a mensagem seja construída eficientemente.
+    Envia o conteúdo da sua mensagem em formato JSON. Monte tudo do seu jeito no [editor do message.style](https://message.style/app/editor), usando as [variáveis](/owners/welcome) disponíveis, e depois cole o resultado no comando. Assim a mensagem é construída de forma eficiente.
 
-    <img
-      src="https://i.imgur.com/eXSH2ip.png"
-      alt={true}
-      className="mx-auto"
-    />
+    <Frame caption="Opção Mensagem do comando /exit no Discord.">
+      <img
+        src="https://i.imgur.com/eXSH2ip.png"
+        alt="Opção Mensagem do comando /exit no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Tempo">
-    Defina um limite de tempo (por exemplo, 1m, 1h) após a criação da mensagem para apagar no seu servidor.
+    Define um limite de tempo, por exemplo `1m` ou `1h`, depois do qual a mensagem é apagada no seu servidor.
 
-    - `Tempo`: Identifique o intervalo de tempo após a criação da mensagem.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `Tempo` | O intervalo de tempo após a criação da mensagem. |
 
-    <img
-      src="https://i.imgur.com/FMJIJOC.png"
-      alt={true}
-      className="mx-auto"
-    />
+    <Frame caption="Opção Tempo do comando /exit no Discord.">
+      <img
+        src="https://i.imgur.com/FMJIJOC.png"
+        alt="Opção Tempo do comando /exit no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Canal">
-    Mencione um canal para o The Reaper enviar as suas saídas\!
+    Define o canal para o The Reaper enviar as mensagens de saída.
 
-    - `Canal`: Identifique o canal onde será enviada as saídas.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `Canal` | O canal onde as mensagens de saída serão enviadas. |
 
-    <img
-      src="https://i.imgur.com/m8OIKW4.png"
-      alt={true}
-      className="mx-auto"
-    />
+    <Frame caption="Opção Canal do comando /exit no Discord.">
+      <img
+        src="https://i.imgur.com/m8OIKW4.png"
+        alt="Opção Canal do comando /exit no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Ativar">
-    Use essa opção para alternar entre o sistema online ou offline no seu servidor.
+    Alterna o sistema entre online e offline no seu servidor.
 
-    <img
-      src="https://i.imgur.com/lbkvIIf.png"
-      alt={true}
-      className="mx-auto"
-    />
+    <Frame caption="Opção Ativar do comando /exit no Discord.">
+      <img
+        src="https://i.imgur.com/lbkvIIf.png"
+        alt="Opção Ativar do comando /exit no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Exportar">
-    Use essa opção para exportar o conteúdo colocado no `/exit message`.
+    Exporta o conteúdo colocado na opção **Mensagem** do `/exit`.
 
-    <img
-      src="https://i.imgur.com/fe3qCyv.png"
-      alt={true}
-      className="mx-auto"
-    />
+    <Frame caption="Opção Exportar do comando /exit no Discord.">
+      <img
+        src="https://i.imgur.com/fe3qCyv.png"
+        alt="Opção Exportar do comando /exit no Discord"
+      />
+    </Frame>
   </Tab>
 </Tabs>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Welcome" icon="hand-wave" href="/commands/welcome">
+    Configure a mensagem de boas-vindas.
+  </Card>
+
+  <Card title="Variáveis de boas-vindas e saída" icon="brackets-curly" href="/owners/welcome">
+    Veja as variáveis que você pode usar nas mensagens.
+  </Card>
+</Columns>

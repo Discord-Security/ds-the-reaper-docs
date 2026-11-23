@@ -1,65 +1,94 @@
 ---
-title: "Parcerias Aviso"
-description: "Um comando de agradecimento de parcerias assim que você finaliza uma, um sistema semelhante (com peculiares diferenças) ao da Luminous Nova, este basta ativar, definir um canal e uma mensagem de agredecimento, todo o sistema é customizável na mensagem"
-mode: "wide"
+title: "Agradecer parcerias com o comando /parcerias_aviso"
+sidebarTitle: "Parcerias aviso"
+description: "Use o /parcerias_aviso para agradecer cada parceria finalizada com uma mensagem personalizável, enviada em um canal e com ranking dos staffs."
+icon: "handshake"
 ---
 
-# Comando
+O comando **/parcerias_aviso** envia uma mensagem de agradecimento assim que você finaliza uma parceria. Basta ativar o sistema, definir um canal e escrever a mensagem de agradecimento, que é totalmente personalizável.
 
-Para usá-lo, digite **/parcerias_aviso**.
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
 
-O mesmo irá ter 5 grupos:
+## Como usar
+
+Digite **/parcerias_aviso** no chat e escolha uma das cinco opções abaixo.
 
 <Tabs>
   <Tab title="Mensagem">
-    Para enviar o conteúdo da sua mensagem em formato JSON, basta construir tudo da sua maneira e usar as [variáveis](/owners/partners) disponíveis [neste site](https://message.style/app/editor). Isso permitirá que a mensagem seja construída eficientemente.
+    Envia o conteúdo da sua mensagem em formato JSON. Monte tudo do seu jeito no [editor do message.style](https://message.style/app/editor), usando as [variáveis de parcerias](/owners/partners) disponíveis, e depois cole o resultado no comando. Assim a mensagem é construída de forma eficiente.
 
-    <img
-      src="https://i.imgur.com/9ljPqdy.png"
-      className="mx-auto"
-    />
+    <Frame caption="Opção Mensagem do comando /parcerias_aviso no Discord.">
+      <img
+        src="https://i.imgur.com/9ljPqdy.png"
+        alt="Opção Mensagem do comando /parcerias_aviso no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Canal">
-    Informe o seu canal onde você publica parcerias.
+    Informa o canal onde você publica as parcerias.
 
-    - `Canal`: Mencione o canal onde deseja publicar parcerias.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `Canal` | Mencione o canal onde você deseja publicar parcerias. |
 
-    <img
-      src="https://i.imgur.com/Teo0Cw7.png"
-      className="mx-auto"
-    />
+    <Frame caption="Opção Canal do comando /parcerias_aviso no Discord.">
+      <img
+        src="https://i.imgur.com/Teo0Cw7.png"
+        alt="Opção Canal do comando /parcerias_aviso no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Ativar">
-    Ative o sistema para começar a notificar.
+    Ativa o sistema para começar a notificar.
 
-    <img
-      src="https://i.imgur.com/v8tIe5l.png"
-      className="mx-auto"
-    />
+    <Frame caption="Opção Ativar do comando /parcerias_aviso no Discord.">
+      <img
+        src="https://i.imgur.com/v8tIe5l.png"
+        alt="Opção Ativar do comando /parcerias_aviso no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Informação">
-    Exibe algumas informações úteis de como este sistema funciona.
+    Exibe informações úteis sobre como o sistema funciona.
 
-    <img
-      src="https://i.imgur.com/oeRaNJB.png"
-      className="mx-auto"
-    />
+    <Frame caption="Opção Informação do comando /parcerias_aviso no Discord.">
+      <img
+        src="https://i.imgur.com/oeRaNJB.png"
+        alt="Opção Informação do comando /parcerias_aviso no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Classificação">
-    Um leaderboard de todos os seus staffs parceria a informar quantas parcerias foram feitas ao total pelo x staff.
+    Mostra um ranking de todos os staffs de parceria, informando quantas parcerias cada um fez no total.
 
-    <img
-      src="https://i.imgur.com/nEkOmjm.png"
-      className="mx-auto"
-    />
+    <Frame caption="Opção Classificação do comando /parcerias_aviso no Discord.">
+      <img
+        src="https://i.imgur.com/nEkOmjm.png"
+        alt="Opção Classificação do comando /parcerias_aviso mostrando o ranking de staffs"
+      />
+    </Frame>
   </Tab>
 </Tabs>
 
----
+## Exemplo
 
-### Exemplo
+<Frame caption="Mensagem de agradecimento enviada pelo /parcerias_aviso.">
+  <img
+    src="https://i.imgur.com/JMD1XYI.png"
+    alt="Exemplo de mensagem de agradecimento de parceria enviada pelo The Reaper"
+  />
+</Frame>
 
-<img
-  src="https://i.imgur.com/JMD1XYI.png"
-  className="mx-auto"
-/>
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Variáveis de parcerias" icon="brackets-curly" href="/owners/partners">
+    Veja as variáveis que você pode usar na mensagem.
+  </Card>
+
+  <Card title="Welcome" icon="hand-wave" href="/commands/welcome">
+    Configure a mensagem de boas-vindas.
+  </Card>
+</Columns>

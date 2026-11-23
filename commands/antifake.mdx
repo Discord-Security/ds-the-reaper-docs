@@ -1,38 +1,87 @@
 ---
-title: "Antifake"
-description: "Remove contas falsas com base no tempo de conta."
-mode: "wide"
+title: "Remover contas falsas com o comando /antifake"
+sidebarTitle: "Antifake"
+description: "Use o /antifake para remover contas falsas com base no tempo de conta: defina o limite, a punição (banir ou expulsar) e o canal dos relatórios."
+icon: "user-shield"
 ---
 
-Para usá-lo, digite **/antifake**.
+O comando **/antifake** remove contas falsas com base no tempo de conta. Você define a idade mínima que uma conta precisa ter para entrar no servidor e escolhe o que fazer com as contas mais novas: banir ou expulsar.
 
-O mesmo irá ter 4 grupos:
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
+
+## Como usar
+
+Digite **/antifake** no chat e escolha uma das quatro opções abaixo.
 
 <Tabs>
-  <Tab title="Punição">
-    Use essa opção para alternar entre punir usuários no anti-fake com banimentos ou expulsões
+  <Tab title="Puníção">
+    Alterna entre punir os usuários do antifake com banimentos ou expulsões.
 
-    - `Ação`: Alterne entre banir usuários ou expulsar eles através do antifake.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `Ação` | Escolha entre banir ou expulsar os usuários através do antifake. |
 
-    ![](https://i.imgur.com/ya0z4pl.png)
+    <Frame caption="Opção Punição do comando /antifake no Discord.">
+      <img
+        src="https://i.imgur.com/ya0z4pl.png"
+        alt="Opção Punição do comando /antifake no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Tempo">
-    Defina um limite de tempo (por exemplo, 1d, 1h) após a criação da conta para negar a permissão de entrada no seu servidor.
+    Define um limite de tempo, por exemplo `1d` ou `1h`, contado a partir da criação da conta. Contas dentro desse limite não têm permissão para entrar no seu servidor.
 
-    - `Tempo`: Defina um intervalo de tempo limite como, por exemplo, 3h para 3 horas.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `Tempo` | O intervalo de tempo limite, por exemplo `3h` para 3 horas. |
 
-    ![](https://i.imgur.com/EMfXe0U.png)
+    <Frame caption="Opção Tempo do comando /antifake no Discord.">
+      <img
+        src="https://i.imgur.com/EMfXe0U.png"
+        alt="Opção Tempo do comando /antifake no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Canal">
-    Mencione um canal para que o The Reaper envie os relatórios de quem foi punido com esse sistema.
+    Define um canal para o The Reaper enviar os relatórios de quem foi punido por esse sistema.
 
-    - `Canal`: Identifique um canal para seu relatório ser enviado.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `Canal` | O canal onde os relatórios serão enviados. |
 
-    ![](https://i.imgur.com/5yitCbs.png)
+    <Frame caption="Opção Canal do comando /antifake no Discord.">
+      <img
+        src="https://i.imgur.com/5yitCbs.png"
+        alt="Opção Canal do comando /antifake no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Ativar">
-    Use essa opção para alternar entre o sistema online ou offline no seu servidor.
+    Alterna o sistema entre online e offline no seu servidor.
 
-    ![](https://i.imgur.com/zVJQ9MC.png)
+    <Frame caption="Opção Ativar do comando /antifake no Discord.">
+      <img
+        src="https://i.imgur.com/zVJQ9MC.png"
+        alt="Opção Ativar do comando /antifake no Discord"
+      />
+    </Frame>
   </Tab>
 </Tabs>
+
+<Tip>
+  Para configurar bem, comece pela opção **Puníção**, depois defina o **Tempo** e o **Canal** dos relatórios e, por fim, use **Ativar**.
+</Tip>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Antispam" icon="shield" href="/commands/antispam">
+    Detecte spam em massa e puna automaticamente.
+  </Card>
+
+  <Card title="Pausar convites" icon="pause" href="/commands/pause_invites">
+    Impeça a entrada de novas pessoas no servidor.
+  </Card>
+</Columns>

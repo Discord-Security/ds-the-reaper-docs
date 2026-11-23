@@ -1,32 +1,78 @@
 ---
-title: "Antispam"
-description: "Detecta spam massivo e age contra."
-mode: "wide"
+title: "Proteger o servidor contra spam com o comando /antispam"
+sidebarTitle: "Antispam"
+description: "Use o /antispam para detectar spam em massa e punir com banimento, expulsão ou castigo, com relatório das punições em um canal à sua escolha."
+icon: "shield"
 ---
 
-Para usá-lo, digite **/antispam**.
+O comando **/antispam** detecta spam em massa no seu servidor e age contra quem o pratica. Você escolhe a punição, define um canal para receber os relatórios e liga ou desliga o sistema.
 
-O mesmo irá ter 3 grupos:
+<Info>
+  **Permissão necessária:** Administrador.
+</Info>
+
+## Como usar
+
+Digite **/antispam** no chat e escolha uma das três opções abaixo.
 
 <Tabs>
-  <Tab title="Punição">
-    Use essa opção para alternar entre punir usuários no anti-fake com banimentos, expulsões ou castigos.
+  <Tab title="Puníção">
+    Alterna entre punir os usuários do antispam com banimentos, expulsões ou castigos.
 
-    - `Ação`: Alterne entre banir usuários, expulsar ou castigar através do antispam.
-    - `Tempo`: Decida quanto tempo a pessoa deve ficar de castigo (10m, 2h, 1d).
+    | Campo | O que colocar |
+    | --- | --- |
+    | `Ação` | Escolha entre banir, expulsar ou castigar os usuários. |
+    | `Tempo` | Quanto tempo a pessoa fica de castigo, por exemplo `10m`, `2h` ou `1d`. |
 
-    ![](/images/swappy-20261118_184743.png)
+    <Frame caption="Opção Punição do comando /antispam no Discord.">
+      <img
+        src="/images/swappy-20261118_184743.png"
+        alt="Opção Punição do comando /antispam no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Canal">
-    Mencione um canal para que o The Reaper envie os relatórios de quem foi punido com esse sistema.
+    Define um canal para o The Reaper enviar os relatórios de quem foi punido por esse sistema.
 
-    - `Canal`: Identifique um canal para seu relatório ser enviado.
+    | Campo | O que colocar |
+    | --- | --- |
+    | `Canal` | O canal onde os relatórios serão enviados. |
 
-    ![](/images/swappy-20261118_184756.png)
+    <Frame caption="Opção Canal do comando /antispam no Discord.">
+      <img
+        src="/images/swappy-20261118_184756.png"
+        alt="Opção Canal do comando /antispam no Discord"
+      />
+    </Frame>
   </Tab>
   <Tab title="Ativar">
-    Use essa opção para alternar entre o sistema online ou offline no seu servidor.
+    Alterna o sistema entre online e offline no seu servidor.
 
-    ![](/images/swappy-20261118_184728.png)
+    <Frame caption="Opção Ativar do comando /antispam no Discord.">
+      <img
+        src="/images/swappy-20261118_184728.png"
+        alt="Opção Ativar do comando /antispam no Discord"
+      />
+    </Frame>
   </Tab>
 </Tabs>
+
+<Tip>
+  Para configurar bem, comece pela opção **Puníção**, depois defina o **Canal** dos relatórios e, por fim, use **Ativar**.
+</Tip>
+
+## Veja também
+
+<Columns cols={2}>
+  <Card title="Antiflood" icon="water" href="/commands/antiflood">
+    Proteja o servidor contra flood de mensagens.
+  </Card>
+
+  <Card title="Antifake" icon="user-shield" href="/commands/antifake">
+    Proteja o servidor contra contas falsas.
+  </Card>
+
+  <Card title="Logs" icon="clipboard-list" href="/commands/logs">
+    Registre mensagens apagadas e editadas.
+  </Card>
+</Columns>
